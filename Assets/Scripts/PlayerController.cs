@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,9 @@ public class PlayerController : MonoBehaviour
     public KeyCode down;
     public KeyCode right;
     
+    // level boundary
+    public GameObject levelBoundary;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -32,29 +36,42 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Abfrage ob player auf boden
-        groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.5f , canJumpOn);
+        groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.5f, canJumpOn);
 
         //WASD Steuerung
-        if (Input.GetKey(jump) && groundIsTouched){
+        if (Input.GetKey(jump) && groundIsTouched)
+        {
             playerBody.AddForce(Vector2.up * jumpforce);
         }
-        if (Input.GetKey(left)){
+
+        if (Input.GetKey(left))
+        {
             playerBody.AddForce(Vector2.left * walkSpeed);
         }
-        if (Input.GetKey(down)){
+
+        if (Input.GetKey(down))
+        {
             playerBody.AddForce(Vector2.down * walkSpeed);
         }
-        if (Input.GetKey(right)){
+
+        if (Input.GetKey(right))
+        {
             playerBody.AddForce(Vector2.right * walkSpeed);
         }
-    
+
 
         //Player soll mit Plattform bewegen
         //Abfrage ob Player auf Plattform
 
         //Make Player Child of thet Plattform
-
     }
 
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject == levelBoundary)
+        {
+            Debug.Log("player dies!!!");
+        }
+    }
 }
 

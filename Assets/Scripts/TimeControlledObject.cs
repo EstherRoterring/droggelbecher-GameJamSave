@@ -41,7 +41,8 @@ public class TimeControlledObject : MonoBehaviour
     public float EasingFunction(float x)
     {
         if (easing) {
-            return x < 0.5 ? 4 * x * x * x : 1 - Mathf.Pow(-2 * x + 2, 3) / 2;
+            // return x < 0.5 ? 4 * x * x * x : 1 - Mathf.Pow(-2 * x + 2, 3) / 2;
+            return -(Mathf.Cos(Mathf.PI * x) - 1) / 2;
         }
         else
         {

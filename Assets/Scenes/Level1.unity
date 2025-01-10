@@ -248,7 +248,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -405,7 +405,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  autoTimeScale: 1
+  autoTimeScale: 0
   controllingObjectDistanceScale: 0.1
   controllingObject: {fileID: 608918609}
 --- !u!1 &619394800
@@ -903,6 +903,10 @@ PrefabInstance:
       value: MovingPlatform (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
+      propertyPath: easing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
       propertyPath: timeController
       value: 
       objectReference: {fileID: 608918615}
@@ -1050,6 +1054,10 @@ PrefabInstance:
       value: MovingPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
+      propertyPath: easing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
       propertyPath: timeController
       value: 
       objectReference: {fileID: 1911597420}
@@ -1094,7 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  autoTimeScale: 1
+  autoTimeScale: 0
   controllingObjectDistanceScale: 0.1
   controllingObject: {fileID: 1911597414}
 --- !u!1001 &678375190185800179

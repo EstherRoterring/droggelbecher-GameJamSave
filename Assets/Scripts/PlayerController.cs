@@ -29,9 +29,9 @@ public class PlayerController : MonoBehaviour
         
         //WASD Steuerung
         if (Input.GetKey(jump)){
-            if(groundIsTouched){
+            
                 transform.Translate(0f, 1f * (jumpforce) * Time.deltaTime,0f);
-            }
+            
         }
         if (Input.GetKey(left)){
             transform.Translate(1f * (-walkSpeed) * Time.deltaTime, 0f, 0f);
@@ -43,21 +43,23 @@ public class PlayerController : MonoBehaviour
             transform.Translate(1f * (walkSpeed) * Time.deltaTime, 0f, 0f);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            
             groundIsTouched = true;
+            Debug.Log("Player is on the ground.");
         }
     }
-
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             groundIsTouched = false;
+            Debug.Log("Player left the ground.");
         }
     }
+
+
 }
 

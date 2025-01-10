@@ -1,0 +1,26 @@
+.header {
+    font-size: 150px;
+    color: rgb(255, 255, 255);
+    -unity-font: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=fa7b8195fd30d4fd68acb26ea971146c&type=3#NotInter-Regular");
+    -unity-font-style: bold;
+}
+
+.button {
+    font-size: 40px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(91, 91, 91);
+    width: 400px;
+    height: 100px;
+    align-self: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    -unity-font-style: bold;
+    -unity-font: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=fa7b8195fd30d4fd68acb26ea971146c&type=3#NotInter-Regular");
+    color: rgb(255, 255, 255);
+}

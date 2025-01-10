@@ -780,8 +780,12 @@ PrefabInstance:
       value: Player02
       objectReference: {fileID: 0}
     - target: {fileID: 7845324913892403549, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
+      propertyPath: groundIsTouched
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845324913892403549, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
       propertyPath: canJumpOn.m_Bits
-      value: 0
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

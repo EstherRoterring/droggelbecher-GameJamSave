@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class MainMenuEvents : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class MainMenuEvents : MonoBehaviour
     private void OnStartGameClick(ClickEvent evt)
     {
         Debug.Log("You Pressed the Start Button");
+        SceneManager.LoadScene("Level1");
     }
 
     private void OnLevelsClick(ClickEvent evt)
@@ -58,4 +60,5 @@ public class MainMenuEvents : MonoBehaviour
 
         _audioSource.Play();
     }
+
 }

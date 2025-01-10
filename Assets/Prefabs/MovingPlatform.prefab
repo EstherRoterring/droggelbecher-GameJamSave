@@ -81,6 +81,7 @@ MonoBehaviour:
   timeController: {fileID: 0}
   keyFrameContainer: {fileID: 3645560382036641550}
   actualObject: {fileID: 3384664446716222154}
+  easing: 1
 --- !u!1 &3645560382036641550
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2976516493822221483, guid: 7dbda0fb96c3041efb419db2bd80fbea, type: 3}
       propertyPath: keyFrameDuration
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8339899678242202805, guid: 7dbda0fb96c3041efb419db2bd80fbea, type: 3}
       propertyPath: m_Name
@@ -396,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2976516493822221483, guid: 7dbda0fb96c3041efb419db2bd80fbea, type: 3}
       propertyPath: keyFrameDuration
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8339899678242202805, guid: 7dbda0fb96c3041efb419db2bd80fbea, type: 3}
       propertyPath: m_Name

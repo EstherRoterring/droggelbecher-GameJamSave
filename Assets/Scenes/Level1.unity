@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  autoTimeScale: 0
+  autoTimeScale: 1
   controllingObjectDistanceScale: 0.1
   controllingObject: {fileID: 1911597414}
 --- !u!1001 &678375190185800179

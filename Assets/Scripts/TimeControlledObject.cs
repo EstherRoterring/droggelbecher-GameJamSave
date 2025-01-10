@@ -12,6 +12,8 @@ public class TimeControlledObject : MonoBehaviour
     public GameObject keyFrameContainer;
     public GameObject actualObject;
 
+    public bool easing;
+
     private KeyFrame[] keyFrames;
     private float totalLoopTime;
     
@@ -36,6 +38,22 @@ public class TimeControlledObject : MonoBehaviour
         timeController.DeregisterObject(this);
     }
 
+    public float EasingFunction(float x)
+    {
+        if (easing) {
+            return x < 0.5 ? 4 * x * x * x : 1 - Mathf.Pow(-2 * x + 2, 3) / 2;
+        }
+        else
+        {
+            return x;
+        }
+    }
+
+    public float FourierNoise(float t)
+    {
+        return Mathf.Sin(0.4f * t) + 0.3f * Mathf.Sin(1f * t) + 0.1f * Mathf.Sin(2.5f * t);
+    }
+    
     // Update is called once per frame
     public void Update()
     {
@@ -50,7 +68,7 @@ public class TimeControlledObject : MonoBehaviour
             }
             else
             {
-                var alpha = t / keyFrame.keyFrameDuration;
+                var alpha = EasingFunction(t / keyFrame.keyFrameDuration);
                 // interpolate 
                 var nextKeyFrame = keyFrames[(k + 1) % keyFrames.Length];
 
@@ -63,5 +81,7 @@ public class TimeControlledObject : MonoBehaviour
             }
         }
         // add local noise, but how?
+        actualObject.transform.localScale *= (1f + FourierNoise(2f * timeController.currentTime) * 0.2f);
+        actualObject.transform.Rotate(Vector3.back, FourierNoise(5f * timeController.currentTime + 123f));
     }
 }

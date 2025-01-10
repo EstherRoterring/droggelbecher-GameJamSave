@@ -163,8 +163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3817191011364627044}
-  walkSpeed: 1.5
-  jumpforce: 15
+  playerBody: {fileID: 459367648052889266}
+  walkSpeed: 3
+  jumpforce: 10
   groundIsTouched: 0
   PlayerFeet: {fileID: 1180244016987486989}
   canJumpOn:

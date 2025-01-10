@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 6a37742bd9d7447a1a1113a5871e9a94
+=======
+guid: 88a2c9b4a80a540d78f17a16adccdf56
+>>>>>>> 017ff13 (sky)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
+using Random = System.Random;
 
 public class TimeControlledObject : MonoBehaviour
 {
@@ -61,5 +62,6 @@ public class TimeControlledObject : MonoBehaviour
                 break;
             }
         }
+        // add local noise, but how?
     }
 }

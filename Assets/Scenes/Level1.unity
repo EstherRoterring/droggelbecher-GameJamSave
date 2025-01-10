@@ -382,6 +382,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
+      propertyPath: randomOffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
       propertyPath: timeController
       value: 
       objectReference: {fileID: 1911597420}
@@ -1301,6 +1305,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
+      propertyPath: randomOffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
       propertyPath: timeController
       value: 
       objectReference: {fileID: 1911597420}
@@ -1564,7 +1572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  autoTimeScale: 0
+  autoTimeScale: 1
   controllingObjectDistanceScale: 0.1
   controllingObject: {fileID: 1911597414}
 --- !u!1001 &2130776610
@@ -1645,6 +1653,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
       propertyPath: easing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
+      propertyPath: randomOffset
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3687024975948322311, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}

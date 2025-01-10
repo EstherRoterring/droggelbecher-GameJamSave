@@ -1,10 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.UI;
 using UnityEngine;
-using Random = System.Random;
 
 public class TimeControlledObject : MonoBehaviour
 {
@@ -13,9 +7,13 @@ public class TimeControlledObject : MonoBehaviour
     public GameObject actualObject;
 
     public bool easing;
+    public bool randomOffset;
 
     private KeyFrame[] keyFrames;
     private float totalLoopTime;
+
+    private float timeOffset;
+    private float noiseScale;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +24,17 @@ public class TimeControlledObject : MonoBehaviour
         {
             totalLoopTime += keyFrame.keyFrameDuration;
         }
+
+        if (randomOffset)
+        {
+            timeOffset = Random.Range(0, 100f);
+        }
+        else
+        {
+            timeOffset = 0f;
+        }
+
+        noiseScale = Random.Range(0.5f, 1.5f);
     }
 
     private void OnEnable()
@@ -52,14 +61,16 @@ public class TimeControlledObject : MonoBehaviour
 
     public float FourierNoise(float t)
     {
+        t *= noiseScale;
         return Mathf.Sin(0.4f * t) + 0.3f * Mathf.Sin(1f * t) + 0.1f * Mathf.Sin(2.5f * t);
     }
     
     // Update is called once per frame
     public void Update()
     {
+        var currentTime = timeController.currentTime + timeOffset;
         // find out in which keyframe we are.
-        float t = timeController.currentTime % totalLoopTime;
+        float t = currentTime % totalLoopTime;
         for (var k = 0; k < keyFrames.Length; k++)
         {
             var keyFrame = keyFrames[k];
@@ -82,7 +93,7 @@ public class TimeControlledObject : MonoBehaviour
             }
         }
         // add local noise, but how?
-        actualObject.transform.localScale *= (1f + FourierNoise(2f * timeController.currentTime) * 0.2f);
-        actualObject.transform.Rotate(Vector3.back, FourierNoise(5f * timeController.currentTime + 123f));
+        actualObject.transform.localScale *= (1f + FourierNoise(2f * currentTime) * 0.2f);
+        actualObject.transform.Rotate(Vector3.back, FourierNoise(5f * currentTime + 123f));
     }
 }

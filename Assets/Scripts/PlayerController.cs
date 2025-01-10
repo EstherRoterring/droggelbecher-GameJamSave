@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public GameObject player;
     public float walkSpeed = 1.5f;
     public float jumpforce;
+    private bool groundIsTouched = false;
     
     //Controlls
     public KeyCode jump;
@@ -28,7 +29,9 @@ public class PlayerController : MonoBehaviour
         
         //WASD Steuerung
         if (Input.GetKey(jump)){
-            transform.Translate(0f, 1f * (jumpforce) * Time.deltaTime,0f);
+            if(groundIsTouched){
+                transform.Translate(0f, 1f * (jumpforce) * Time.deltaTime,0f);
+            }
         }
         if (Input.GetKey(left)){
             transform.Translate(1f * (-walkSpeed) * Time.deltaTime, 0f, 0f);
@@ -38,6 +41,22 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(right)){
             transform.Translate(1f * (walkSpeed) * Time.deltaTime, 0f, 0f);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            
+            groundIsTouched = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            groundIsTouched = false;
         }
     }
 }

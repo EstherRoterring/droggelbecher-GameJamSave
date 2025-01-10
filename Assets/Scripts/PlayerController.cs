@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     public GameObject player;
     public float walkSpeed = 1.5f;
     public float jumpforce;
-    private bool groundIsTouched = false;
+    public bool groundIsTouched;
+    public Transform PlayerFeet;
+    public LayerMask canJumpOn;
     
     //Controlls
     public KeyCode jump;
@@ -26,12 +28,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Abfrage ob player auf boden
+        groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.5f , canJumpOn);
         
         //WASD Steuerung
-        if (Input.GetKey(jump)){
-            
-                transform.Translate(0f, 1f * (jumpforce) * Time.deltaTime,0f);
-            
+        if (Input.GetKey(jump) && groundIsTouched){
+            transform.Translate(0f, 1f * (jumpforce) * Time.deltaTime,0f);
         }
         if (Input.GetKey(left)){
             transform.Translate(1f * (-walkSpeed) * Time.deltaTime, 0f, 0f);
@@ -41,22 +43,6 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(right)){
             transform.Translate(1f * (walkSpeed) * Time.deltaTime, 0f, 0f);
-        }
-    }
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            groundIsTouched = true;
-            Debug.Log("Player is on the ground.");
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            groundIsTouched = false;
-            Debug.Log("Player left the ground.");
         }
     }
 

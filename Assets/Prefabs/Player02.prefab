@@ -52,6 +52,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player02
       objectReference: {fileID: 0}
+    - target: {fileID: 4900537498139940212, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
+      propertyPath: down
+      value: 274
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900537498139940212, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
+      propertyPath: jump
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900537498139940212, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
+      propertyPath: left
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900537498139940212, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
+      propertyPath: right
+      value: 275
+      objectReference: {fileID: 0}
     - target: {fileID: 7902481146145165802, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
       propertyPath: down
       value: 274

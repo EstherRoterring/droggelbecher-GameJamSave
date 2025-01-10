@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public GameObject player;
+    public Rigidbody2D playerBody;
     public float walkSpeed = 1.5f;
     public float jumpforce;
     public bool groundIsTouched;
@@ -30,19 +31,19 @@ public class PlayerController : MonoBehaviour
     {
         //Abfrage ob player auf boden
         groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.5f , canJumpOn);
-        
+
         //WASD Steuerung
         if (Input.GetKey(jump) && groundIsTouched){
-            transform.Translate(0f, 1f * (jumpforce) * Time.deltaTime,0f);
+            playerBody.AddForce(Vector2.up * jumpforce);
         }
         if (Input.GetKey(left)){
-            transform.Translate(1f * (-walkSpeed) * Time.deltaTime, 0f, 0f);
+            playerBody.AddForce(Vector2.left * walkSpeed);
         }
         if (Input.GetKey(down)){
-            transform.Translate(0f, 1f * (-walkSpeed) * Time.deltaTime,0f);
+            playerBody.AddForce(Vector2.down * walkSpeed);
         }
         if (Input.GetKey(right)){
-            transform.Translate(1f * (walkSpeed) * Time.deltaTime, 0f, 0f);
+            playerBody.AddForce(Vector2.right * walkSpeed);
         }
     }
 

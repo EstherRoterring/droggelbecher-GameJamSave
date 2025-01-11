@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6820784458961182970}
   - component: {fileID: 4956126070178389005}
   - component: {fileID: 6893153016964321758}
+  - component: {fileID: 1835664214717805534}
   m_Layer: 8
   m_Name: Platform
   m_TagString: Untagged
@@ -110,6 +111,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeGivingCollider: {fileID: 6022838667738264606}
+--- !u!114 &1835664214717805534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769092951429747733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40e4b73baa1d4d69978bc326c54ee44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 6820784458961182970}
+  colors:
+  - {r: 0.5896226, g: 0.8410632, b: 1, a: 1}
+  - {r: 0.6666667, g: 0.8410632, b: 1, a: 1}
+  - {r: 0.627451, g: 0.8410632, b: 1, a: 1}
+  - {r: 0.7058824, g: 0.8410632, b: 1, a: 1}
 --- !u!1 &5532293152445885736
 GameObject:
   m_ObjectHideFlags: 0

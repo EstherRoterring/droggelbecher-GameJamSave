@@ -28,7 +28,7 @@ public class WobblyWobbly : MonoBehaviour
         float currentTime = Time.time;
         // add local noise, but how?
         float s = 1f + FourierNoise(2f * currentTime) * 0.2f + 0.2f;
-        this.transform.localScale = new Vector3(s, s, 1);
+        this.transform.localScale = new Vector3(s, s, s);
         this.transform.rotation = Quaternion.Euler(0, 0, 0);
         this.transform.Rotate(Vector3.back, FourierNoise(5f * currentTime + 123f));
     }

@@ -256,9 +256,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTime: 0
   autoTimeScale: 0
-  controllingObjectDistanceScale: 1.5
+  controllingObjectDistanceScale: 1
   controllingObject: {fileID: 3817191011364627044}
-  minControllingObjectPositionChange: 0.01
+  minControllingObjectPositionChange: 0.0001
   isTimeChanging: 0
 --- !u!1 &5662865341718500623
 GameObject:

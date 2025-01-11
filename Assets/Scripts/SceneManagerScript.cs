@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class SceneManagerScript : MonoBehaviour
 {
 
+    public Collider2D player01;
+    public Collider2D player02;
+
+    public bool playerOneInGoal;
+    public bool playerTwoInGoal;
+
     
     // Start is called before the first frame update
     void Start()
@@ -16,6 +22,10 @@ public class SceneManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(playerOneInGoal && playerTwoInGoal){
+            LoadNextScene();
+        }
         
     }
     public void LoadNextScene()
@@ -33,8 +43,22 @@ public class SceneManagerScript : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(){
+    public void OnTriggerEnter2D(Collider2D other){
         //Player kommen ins Ziel
+        if(other == player01){
+            playerOneInGoal = true;
+        }
+            if(other == player02){
+            playerTwoInGoal = true;
+        }
+    }    
+    public void OnTriggerExit2D(Collider2D other){
+        //Player kommen ins Ziel
+        if(other == player01){
+            playerOneInGoal = false;
+        }
+            if(other == player02){
+            playerTwoInGoal = false;
+        }
     }
-
 }

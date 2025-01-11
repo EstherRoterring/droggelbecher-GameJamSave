@@ -11,7 +11,6 @@ public class AntonsConeFactory : MonoBehaviour
     void Start()
     {
         myMeshFilter = GetComponent<MeshFilter>();
-
         myMeshFilter.mesh = ConifyCollider(shapeGivingCollider, 1.0f);
     }
 

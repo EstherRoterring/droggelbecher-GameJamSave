@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             if (groundIsTouched.gameObject.TryGetComponent<ColliderOnPlatform>(out colliderOnPlatform))
             {
                 travellingOnPlatform = colliderOnPlatform.platform;
-                // travellingOnPlatform.busPassengers.Add(this.transform);  // todo, add me again
+                travellingOnPlatform.busPassengers.Add(this.transform);  // todo, add me again
             }
         }
 

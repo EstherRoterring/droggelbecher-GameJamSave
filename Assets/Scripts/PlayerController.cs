@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public Collider2D groundIsTouched;
     public Transform PlayerFeet;
     public LayerMask canJumpOn;
+    public int playerID; // 0 or 1
 
     public TimeControlledObject travellingOnPlatform = null;
     
@@ -36,6 +37,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print
+
+
         //Abfrage ob player auf boden
         if (travellingOnPlatform)
         {

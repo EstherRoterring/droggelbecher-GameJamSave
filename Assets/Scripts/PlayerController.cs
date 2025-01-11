@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -36,6 +37,10 @@ public class PlayerController : MonoBehaviour
     public bool shouldFlip = false;
     public bool isWalking = false;
 
+    private bool jumpKeyDown;
+    private bool jumpkeyPressed;
+    private bool jumpKeyReleased;
+
     // Update is called once per frame
     void Update()
     {
@@ -56,6 +61,9 @@ public class PlayerController : MonoBehaviour
                 // travellingOnPlatform.busPassengers.Add(this.transform);  // todo, add me again
             }
         }
+
+        // Jump key states
+        float jumpAxis = playerID == 0 ? Input.GetAxis("Jump") : Input.GetAxis("Jump P2");
 
         if (Input.GetKey(jump) && groundIsTouched)
         {

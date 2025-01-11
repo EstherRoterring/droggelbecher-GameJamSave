@@ -4071,6 +4071,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4049342551743963528}
     - target: {fileID: 7845324913892403549, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
+      propertyPath: playerID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845324913892403549, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
       propertyPath: levelBoundary
       value: 
       objectReference: {fileID: 4345747111497088674}
@@ -4612,6 +4616,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7240543057448625530}
     m_Modifications:
+    - target: {fileID: 306734240108528773, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: walkSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 306734240108528773, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: levelBoundary
       value: 

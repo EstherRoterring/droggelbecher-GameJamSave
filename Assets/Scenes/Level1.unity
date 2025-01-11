@@ -2434,6 +2434,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 837187798}
     - target: {fileID: 7845324913892403549, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
+      propertyPath: playerID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845324913892403549, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
       propertyPath: levelBoundary
       value: 
       objectReference: {fileID: 1290740843}

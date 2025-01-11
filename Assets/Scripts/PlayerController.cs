@@ -38,11 +38,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print
-
-
-        //Abfrage ob player auf boden
-        if (travellingOnPlatform)
+		//Abfrage ob player auf boden
+		if (travellingOnPlatform)
         {
             Debug.Log("nicht mehr drauf?");
             travellingOnPlatform.busPassengers.Remove(this.transform);
@@ -59,27 +56,9 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //WASD Steuerung
         if (Input.GetKey(jump) && groundIsTouched)
         {
             playerBody.AddForce(Vector2.up * jumpforce);
-        }
-
-        if (Input.GetKey(left))
-        {
-            playerBody.AddForce(Vector2.left * walkSpeed);
-            shouldFlip = true;
-        }
-
-        if (Input.GetKey(down))
-        {
-            playerBody.AddForce(Vector2.down * walkSpeed);
-        }
-
-        if (Input.GetKey(right))
-        {
-            playerBody.AddForce(Vector2.right * walkSpeed);
-            shouldFlip = false;
         }
         
         // change sprites
@@ -94,7 +73,19 @@ public class PlayerController : MonoBehaviour
         renderer.flipX = shouldFlip;
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+	private void FixedUpdate()
+	{
+        // Horizontal Movement
+        float horizontal_movement = playerID == 0 ? Input.GetAxis("Horizontal") : Input.GetAxis("Horizontal P2");
+
+        // maybe very shit
+        playerBody.velocity = new Vector2(horizontal_movement * walkSpeed, playerBody.velocity.y);
+
+        // flip sprite
+        shouldFlip = playerBody.velocity.x < 0;
+	}
+
+	private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject == levelBoundary)
         {

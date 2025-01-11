@@ -128,5 +128,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log("We died.");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (other.gameObject.tag == "Enemy"){
+            Debug.Log("We died from Enemy.");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AntonsConeFactory : MonoBehaviour
 {
-    public float target_edge_length = 1.0f;
-
     private PolygonCollider2D shapeGivingCollider;
     private MeshFilter myMeshFilter;
 
@@ -16,7 +14,7 @@ public class AntonsConeFactory : MonoBehaviour
         myMeshFilter = GetComponent<MeshFilter>();  
         Debug.Log(shapeGivingCollider);
 
-        myMeshFilter.mesh = ConifyCollider(shapeGivingCollider, 10.0f);
+        myMeshFilter.mesh = ConifyCollider(shapeGivingCollider, 1.0f);
     }
 
     Mesh ConifyCollider(PolygonCollider2D collider, float coneHeight)

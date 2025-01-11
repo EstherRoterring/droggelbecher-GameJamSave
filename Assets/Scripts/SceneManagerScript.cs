@@ -22,6 +22,7 @@ public class SceneManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Player1 :" + playerOneInGoal + "Player2:" + playerTwoInGoal);
 
         if(playerOneInGoal && playerTwoInGoal){
             LoadNextScene();
@@ -44,6 +45,7 @@ public class SceneManagerScript : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D other){
+        Debug.Log("Something goaled");
         //Player kommen ins Ziel
         if(other == player01){
             playerOneInGoal = true;

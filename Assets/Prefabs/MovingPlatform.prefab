@@ -129,13 +129,8 @@ GameObject:
   - component: {fileID: 6669431435149586337}
   - component: {fileID: 3146232538835809513}
   m_Layer: 8
-<<<<<<< HEAD
   m_Name: Platform
   m_TagString: Untagged
-=======
-  m_Name: Platform
-  m_TagString: Kutsche
->>>>>>> 82e57d4bd05862d99fdb1240c440b9408e532ca5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,7 +255,6 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6082358558738484463}
-<<<<<<< HEAD
   m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -280,27 +274,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
-=======
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
->>>>>>> 82e57d4bd05862d99fdb1240c440b9408e532ca5
 --- !u!1001 &160257526175117696
 PrefabInstance:
   m_ObjectHideFlags: 0

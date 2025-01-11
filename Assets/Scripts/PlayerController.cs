@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -59,12 +60,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("We left a trigger");
         if (other.gameObject == levelBoundary)
         {
-            Debug.Log("player dies!!!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

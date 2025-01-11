@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1119249754392512101}
   - component: {fileID: 2152346230172847901}
   - component: {fileID: 184863292018402241}
+  - component: {fileID: 1044917904989651802}
   m_Layer: 6
   m_Name: Goal
   m_TagString: Untagged
@@ -100,8 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player01: {fileID: 5593997575411480522, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
   player02: {fileID: 2666222736996981266, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
-  playerOneInGoal: 0
-  playerTwoInGoal: 0
 --- !u!70 &184863292018402241
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,3 +136,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.42393723, y: -0.0000031789143}
   m_Size: {x: 9.834432, y: 16.52324}
   m_Direction: 0
+--- !u!95 &1044917904989651802
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211956334796534808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3fdd854b34a8d400f96d7306ce344f3f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         //Abfrage ob player auf boden
         if (travellingOnPlatform)
         {
+            Debug.Log("nicht mehr drauf?");
             travellingOnPlatform.busPassengers.Remove(this.transform);
         }
         groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.2f, canJumpOn);

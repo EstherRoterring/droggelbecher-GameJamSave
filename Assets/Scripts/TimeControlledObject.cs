@@ -108,4 +108,17 @@ public class TimeControlledObject : MonoBehaviour
             player.transform.position = player.transform.position + actualObject.transform.position - lastPosition;
         }
     }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 0, 1, 0.5f);
+
+        var debugKeyFrames = keyFrameContainer.GetComponentsInChildren<KeyFrame>();
+        for (var k = 0; k < debugKeyFrames.Length; k++)
+        {
+            var keyFrame = debugKeyFrames[k];
+            var nextKeyFrame = debugKeyFrames[(k + 1) % debugKeyFrames.Length];
+            Gizmos.DrawLine(keyFrame.transform.position, nextKeyFrame.transform.position);
+        }
+    }
 }

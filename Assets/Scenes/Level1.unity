@@ -3454,11 +3454,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2623829022732843770, guid: 48974abb3254443f9b48718906b683c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.9900007
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: 2623829022732843770, guid: 48974abb3254443f9b48718906b683c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.019999
+      value: 14.85
       objectReference: {fileID: 0}
     - target: {fileID: 2623829022732843770, guid: 48974abb3254443f9b48718906b683c9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3522,7 +3522,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 306734240108528773, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: jumpforce
-      value: 25
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 306734240108528773, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: walkSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 306734240108528773, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: levelBoundary
@@ -3533,32 +3537,76 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420032}
     - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 519420032}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: buildings.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: buildings.Array.data[0]
       value: 
       objectReference: {fileID: 1499438047}
     - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: buildings.Array.data[1]
+      value: 
+      objectReference: {fileID: 169016572}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: buildings.Array.data[2]
+      value: 
+      objectReference: {fileID: 931597616}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: buildings.Array.data[3]
+      value: 
+      objectReference: {fileID: 2128614521}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: buildings.Array.data[4]
+      value: 
+      objectReference: {fileID: 659110180}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: buildingCameraShifts.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: buildingCameraShifts.Array.data[0].x
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: buildingCameraShifts.Array.data[0].y
-      value: -0.5
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: buildingCameraShifts.Array.data[1].x
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: buildingCameraShifts.Array.data[1].y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: buildingCameraShifts.Array.data[2].x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: buildingCameraShifts.Array.data[2].y
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: buildingCameraShifts.Array.data[3].x
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: buildingCameraShifts.Array.data[3].y
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8150931222795107594, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.59
       objectReference: {fileID: 0}
     - target: {fileID: 8150931222795107594, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 8150931222795107594, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6156,11 +6204,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2867608972366372132, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.84
+      value: 20.32
       objectReference: {fileID: 0}
     - target: {fileID: 2867608972366372132, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.25
+      value: 2.67
       objectReference: {fileID: 0}
     - target: {fileID: 2974910039588479356, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6184,11 +6232,11 @@ PrefabInstance:
       objectReference: {fileID: 1911597420}
     - target: {fileID: 8869504451932151675, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 8869504451932151675, guid: 4334e8cb247af49eaaa1528a01cf1d44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.12
+      value: -0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

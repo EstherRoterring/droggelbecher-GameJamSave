@@ -10,7 +10,7 @@ public class ParallaxEffect : MonoBehaviour
     private bool initialized;
     private Vector3 playerOrigin;
 
-    public Transform camera;
+    public Transform myCamera;
     
     void Update()
     {
@@ -26,8 +26,8 @@ public class ParallaxEffect : MonoBehaviour
         for (var i = 0; i < buildings.Length; i++)
         {
             var buildingShift = buildingCameraShifts[i];
-            buildings[i].transform.position = camera.transform.position + 
-                new Vector3(playerOffset.x * buildingShift.x, playerOffset.y * buildingShift.y, buildings[i].transform.position.z);
+            buildings[i].transform.position = new Vector3(myCamera.transform.position.x, myCamera.transform.position.y, 0)
+                + new Vector3(playerOffset.x * buildingShift.x, playerOffset.y * buildingShift.y, buildings[i].transform.position.z);
         }
     }
 }

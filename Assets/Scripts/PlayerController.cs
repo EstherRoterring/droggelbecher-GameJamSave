@@ -41,8 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             travellingOnPlatform.busPassengers.Remove(this.transform);
         }
-        groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.1f, canJumpOn);
-        Debug.Log(groundIsTouched);
+        groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.2f, canJumpOn);
         travellingOnPlatform = null;
         if (groundIsTouched)
         {
@@ -57,22 +56,22 @@ public class PlayerController : MonoBehaviour
         //WASD Steuerung
         if (Input.GetKey(jump) && groundIsTouched)
         {
-            playerBody.AddForce(Vector2.up * jumpforce * Time.deltaTime);
+            playerBody.AddForce(Vector2.up * jumpforce);
         }
 
         if (Input.GetKey(left))
         {
-            playerBody.AddForce(Vector2.left * walkSpeed * Time.deltaTime);
+            playerBody.AddForce(Vector2.left * walkSpeed);
         }
 
         if (Input.GetKey(down))
         {
-            playerBody.AddForce(Vector2.down * walkSpeed * Time.deltaTime);
+            playerBody.AddForce(Vector2.down * walkSpeed);
         }
 
         if (Input.GetKey(right))
         {
-            playerBody.AddForce(Vector2.right * walkSpeed * Time.deltaTime);
+            playerBody.AddForce(Vector2.right * walkSpeed);
         }
     }
 

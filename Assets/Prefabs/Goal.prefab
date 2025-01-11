@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f0d767513134039bc654f9d38f4301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player01: {fileID: 0}
-  player02: {fileID: 0}
+  player01: {fileID: 5593997575411480522, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+  player02: {fileID: 2666222736996981266, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
   playerOneInGoal: 0
   playerTwoInGoal: 0
 --- !u!70 &184863292018402241

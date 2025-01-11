@@ -9,8 +9,8 @@ public class SceneManagerScript : MonoBehaviour
     public Collider2D player01;
     public Collider2D player02;
 
-    public bool playerOneInGoal;
-    public bool playerTwoInGoal;
+    public static bool playerOneInGoal;
+    public static bool playerTwoInGoal;
 
     
     // Start is called before the first frame update
@@ -53,14 +53,6 @@ public class SceneManagerScript : MonoBehaviour
             if(other == player02){
             playerTwoInGoal = true;
         }
-    }    
-    public void OnTriggerExit2D(Collider2D other){
-        //Player kommen ins Ziel
-        if(other == player01){
-            playerOneInGoal = false;
-        }
-            if(other == player02){
-            playerTwoInGoal = false;
-        }
+    
     }
 }

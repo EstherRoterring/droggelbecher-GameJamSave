@@ -1,16 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=0ec88d7d690204cd59b664c33cb9d1e0&amp;type=3#MainMenuStyle" />
-    <ui:VisualElement name="Backgound" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Background/3.png?fileID=2800000&amp;guid=58085db14afa743aaba83c60180bcfb3&amp;type=3#3&quot;);">
-        <ui:VisualElement name="City" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Buildings/buildings_transp_light.png?fileID=2800000&amp;guid=9f63bd0b303ec4c53a41cfc4bfa2a212&amp;type=3#buildings_transp_light&quot;);">
-            <ui:VisualElement name="Platform" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Start%20Screen/platform.png?fileID=2800000&amp;guid=1b9cbc304af1241a7a2e8f8dd032365f&amp;type=3#platform&quot;);">
-                <ui:VisualElement name="Ropes" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Start%20Screen/ropes.png?fileID=2800000&amp;guid=99f1fa1a52bc349a0978b7607cbdc9b0&amp;type=3#ropes&quot;);">
-                    <ui:VisualElement name="Contianer" style="flex-grow: 1; color: rgb(255, 255, 255);">
-                        <ui:Label tabindex="-1" text="Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Header" class="header" style="align-items: center; justify-content: center; -unity-text-align: upper-center; margin-top: 150px; margin-bottom: 150px; margin-left: 4px; -unity-font-definition: initial;" />
-                        <ui:Button text="Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartGameButton" class="button" />
-                        <ui:Button text="Levels" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelsButton" class="button" />
-                    </ui:VisualElement>
-                </ui:VisualElement>
-            </ui:VisualElement>
-        </ui:VisualElement>
+    <ui:VisualElement name="Contianer" style="flex-grow: 1; color: rgb(255, 255, 255);">
+        <ui:Label tabindex="-1" text="Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Header" class="header" style="align-items: center; justify-content: center; -unity-text-align: upper-center; margin-top: 150px; margin-bottom: 150px; margin-left: 4px; -unity-font-definition: initial;" />
+        <ui:Button text="Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartGameButton" class="button" />
+        <ui:Button text="Tutorial" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TutorialButton" class="button" />
+        <ui:Button text="Levels" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelsButton" class="button" />
     </ui:VisualElement>
 </ui:UXML>

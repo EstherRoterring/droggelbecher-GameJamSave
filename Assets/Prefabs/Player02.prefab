@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: right
       value: 275
       objectReference: {fileID: 0}
+    - target: {fileID: 7557932731711123022, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
+      propertyPath: controllingObject
+      value: 
+      objectReference: {fileID: 7845324913892403549}
     - target: {fileID: 7902481146145165802, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
       propertyPath: down
       value: 274
@@ -90,3 +94,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
+--- !u!114 &7845324913892403549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4900537498139940212, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
+  m_PrefabInstance: {fileID: 2945923233310374953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688dd17be5fee8749a932ca0e8f6cba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

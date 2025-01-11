@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UI;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class CloudComponent : MonoBehaviour
@@ -21,7 +21,8 @@ public class CloudComponent : MonoBehaviour
         this.transform.localPosition += speed * Time.deltaTime;
         if (!this.GetComponent<SpriteRenderer>().isVisible)
         {
-            if (visibleAtLeastOnce) {
+            if (visibleAtLeastOnce)
+            {
                 visibleAtLeastOnce = false;
                 // if they are completely out of view, then we reset it
                 this.transform.localPosition = startPositionRelativeToParent - new Vector3(2 * GetComponent<SpriteRenderer>().sprite.bounds.extents.x, 0, 0);

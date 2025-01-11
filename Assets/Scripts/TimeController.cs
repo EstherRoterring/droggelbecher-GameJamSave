@@ -9,7 +9,10 @@ public class TimeController : MonoBehaviour
     public float autoTimeScale;
     public float controllingObjectDistanceScale;
     public GameObject controllingObject;
+    public float minControllingObjectPositionChange = 0.0001f;
 
+    public bool isTimeChanging = false;
+    
     private bool controllingObjectPositionInitialized = false;
     private Vector3 oldControllingObjectPosition = Vector3.zero;
 
@@ -17,18 +20,26 @@ public class TimeController : MonoBehaviour
 
     void Update()
     {
+        var oldCurrentTime = currentTime;
+        
         currentTime += this.autoTimeScale * Time.deltaTime;
 
         if (controllingObjectPositionInitialized)
         {
             var positionChange = (controllingObject.transform.position - oldControllingObjectPosition).magnitude;
-            currentTime += positionChange * controllingObjectDistanceScale;
+            Debug.Log(positionChange);
+            if (positionChange > minControllingObjectPositionChange)
+            {
+                currentTime += this.controllingObjectDistanceScale * Time.deltaTime;
+            }
         }
         else
         {
             controllingObjectPositionInitialized = true;
         }
         oldControllingObjectPosition = controllingObject.transform.position;
+
+        isTimeChanging = (currentTime > oldCurrentTime);
     }
 
     public void TimeRegisteredUpdate(float deltaTime)

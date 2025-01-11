@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1000457593406006843}
   - component: {fileID: 4900537498139940212}
   - component: {fileID: 5432806304996314486}
+  - component: {fileID: 7557932731711123022}
   m_Layer: 0
   m_Name: PlayerParent
   m_TagString: Untagged
@@ -214,6 +215,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 87e10eb2a48eb4cc189ac9009d9a48b5, type: 3}
   jumpingSprite: {fileID: 21300000, guid: 92b8fbf55ab384d8085c6301f63fa757, type: 3}
   shouldFlip: 0
+  isWalking: 0
 --- !u!114 &5432806304996314486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +241,24 @@ MonoBehaviour:
   - {x: -0.15, y: -0.02}
   - {x: 0, y: 0}
   myCamera: {fileID: 0}
+--- !u!114 &7557932731711123022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3817191011364627044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fede99c32cd4d2b995ce509cf341fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTime: 0
+  autoTimeScale: 0
+  controllingObjectDistanceScale: 1
+  controllingObject: {fileID: 3817191011364627044}
+  minControllingObjectPositionChange: 0.0001
+  isTimeChanging: 0
 --- !u!1 &5662865341718500623
 GameObject:
   m_ObjectHideFlags: 0

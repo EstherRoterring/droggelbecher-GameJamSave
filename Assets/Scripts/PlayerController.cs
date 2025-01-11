@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public Sprite jumpingSprite;
 
     public bool shouldFlip = false;
+    public bool isWalking = false;
 
     // Update is called once per frame
     void Update()
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
             if (groundIsTouched.gameObject.TryGetComponent<ColliderOnPlatform>(out colliderOnPlatform))
             {
                 travellingOnPlatform = colliderOnPlatform.platform;
-                travellingOnPlatform.busPassengers.Add(this.transform);
+                // travellingOnPlatform.busPassengers.Add(this.transform);  // todo, add me again
             }
         }
 

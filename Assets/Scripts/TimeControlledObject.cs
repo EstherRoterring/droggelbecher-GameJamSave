@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.TestTools;
 
 public class TimeControlledObject : MonoBehaviour
 {
@@ -40,16 +38,6 @@ public class TimeControlledObject : MonoBehaviour
         }
 
         noiseScale = Random.Range(0.5f, 1.5f);
-    }
-
-    private void OnEnable()
-    {
-        timeController.RegisterObject(this);
-    }
-
-    private void OnDisable()
-    {
-        timeController.DeregisterObject(this);
     }
 
     public float EasingFunction(float x)

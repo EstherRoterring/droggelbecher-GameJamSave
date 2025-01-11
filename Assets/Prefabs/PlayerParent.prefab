@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 459367648052889266}
   - component: {fileID: 1000457593406006843}
   - component: {fileID: 4900537498139940212}
+  - component: {fileID: 5432806304996314486}
   m_Layer: 0
   m_Name: PlayerParent
   m_TagString: Untagged
@@ -198,17 +199,29 @@ MonoBehaviour:
   playerBody: {fileID: 459367648052889266}
   walkSpeed: 2000
   jumpforce: 10000
-  groundIsTouched: 0
-  plattformIsTouched: 0
+  groundIsTouched: {fileID: 0}
   PlayerFeet: {fileID: 1180244016987486989}
   canJumpOn:
     serializedVersion: 2
     m_Bits: 256
+  travellingOnPlatform: {fileID: 0}
   jump: 119
   left: 97
   down: 115
   right: 100
   levelBoundary: {fileID: 0}
+--- !u!114 &5432806304996314486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3817191011364627044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d50c8ff670e645d38133a8e867ea072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5662865341718500623
 GameObject:
   m_ObjectHideFlags: 0

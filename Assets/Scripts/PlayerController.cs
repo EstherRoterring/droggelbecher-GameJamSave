@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("We left a trigger");
         if (other.gameObject == levelBoundary)
         {
             Debug.Log("player dies!!!");

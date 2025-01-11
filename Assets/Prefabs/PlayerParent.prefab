@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3557391855808490747}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: de563d086e49345b39a9a080e2bbbad2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87e10eb2a48eb4cc189ac9009d9a48b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +114,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1180244016987486989}
@@ -197,19 +197,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3817191011364627044}
   playerBody: {fileID: 459367648052889266}
-  walkSpeed: 2000
-  jumpforce: 10000
+  walkSpeed: 1
+  jumpforce: 5
   groundIsTouched: {fileID: 0}
   PlayerFeet: {fileID: 1180244016987486989}
   canJumpOn:
     serializedVersion: 2
     m_Bits: 256
+  renderer: {fileID: 4984516826798545175}
   travellingOnPlatform: {fileID: 0}
   jump: 119
   left: 97
   down: 115
   right: 100
   levelBoundary: {fileID: 0}
+  idleSprite: {fileID: 21300000, guid: 87e10eb2a48eb4cc189ac9009d9a48b5, type: 3}
+  jumpingSprite: {fileID: 21300000, guid: 92b8fbf55ab384d8085c6301f63fa757, type: 3}
+  shouldFlip: 0
 --- !u!114 &5432806304996314486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +226,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d50c8ff670e645d38133a8e867ea072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildings:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buildingCameraShifts:
+  - {x: -0.5, y: -0.2}
+  - {x: -0.25, y: -0.1}
+  - {x: -0.1, y: -0.05}
+  - {x: -0.15, y: -0.02}
+  - {x: 0, y: 0}
+  myCamera: {fileID: 0}
 --- !u!1 &5662865341718500623
 GameObject:
   m_ObjectHideFlags: 0

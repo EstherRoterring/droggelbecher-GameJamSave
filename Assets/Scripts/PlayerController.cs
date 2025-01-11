@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask canJumpOn;
     public int playerID; // 0 or 1
 
+    public SpriteRenderer renderer;
+
     public TimeControlledObject travellingOnPlatform = null;
     
     //Controlls
@@ -27,12 +30,10 @@ public class PlayerController : MonoBehaviour
     // level boundary
     public GameObject levelBoundary;
 
+    public Sprite idleSprite;
+    public Sprite jumpingSprite;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public bool shouldFlip = false;
 
     // Update is called once per frame
     void Update()
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         //Abfrage ob player auf boden
         if (travellingOnPlatform)
         {
+            Debug.Log("nicht mehr drauf?");
             travellingOnPlatform.busPassengers.Remove(this.transform);
         }
         groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.2f, canJumpOn);
@@ -66,6 +68,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(left))
         {
             playerBody.AddForce(Vector2.left * walkSpeed);
+            shouldFlip = true;
         }
 
         if (Input.GetKey(down))
@@ -76,7 +79,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(right))
         {
             playerBody.AddForce(Vector2.right * walkSpeed);
+            shouldFlip = false;
         }
+        
+        // change sprites
+        if (groundIsTouched)
+        {
+            renderer.sprite = idleSprite;
+        }
+        else
+        {
+            renderer.sprite = jumpingSprite;
+        }
+        renderer.flipX = shouldFlip;
     }
 
     private void OnTriggerExit2D(Collider2D other)

@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     public GameObject player;
     public Rigidbody2D playerBody;
     public float walkSpeed = 1.5f;
-    public float jumpforce;
+    public float jumpforce = 1.0f;
+    public float jumpInterruptForce = 1.0f;
     public Collider2D groundIsTouched;
     public Transform PlayerFeet;
     public LayerMask canJumpOn;
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
     public bool isWalking = false;
 
     private bool jumpKeyDown;
-    private bool jumpkeyPressed;
+    private bool jumpKeyPressed;
     private bool jumpKeyReleased;
 
     // Update is called once per frame
@@ -64,8 +65,27 @@ public class PlayerController : MonoBehaviour
 
         // Jump key states
         float jumpAxis = playerID == 0 ? Input.GetAxis("Jump") : Input.GetAxis("Jump P2");
+        bool pressedThisFrame = jumpAxis > 0;
+        if (pressedThisFrame)
+        {
+            jumpKeyPressed = !jumpKeyDown;
+		}
+        else
+        {
+			jumpKeyReleased = jumpKeyDown;
+        }
+        jumpKeyDown = pressedThisFrame;
 
-        if (Input.GetKey(jump) && groundIsTouched)
+        if (jumpKeyPressed) 
+        {
+            Debug.Log("PRESSED JUMP!");
+        }
+        if (jumpKeyReleased)
+        {
+            Debug.Log("RELEASED JUMP!");
+        }
+
+		if (Input.GetKey(jump) && groundIsTouched)
         {
             playerBody.AddForce(Vector2.up * jumpforce);
         }
@@ -92,6 +112,16 @@ public class PlayerController : MonoBehaviour
 
         // flip sprite
         shouldFlip = playerBody.velocity.x < 0;
+
+        // jumping
+        if (jumpKeyPressed && groundIsTouched)
+        {
+            playerBody.AddForce(jumpforce * Vector2.up, ForceMode2D.Impulse);
+        }
+        if (jumpKeyReleased && !groundIsTouched)
+        {
+            playerBody.AddForce(jumpInterruptForce * Vector2.down, ForceMode2D.Impulse);
+        }
 	}
 
 	private void OnTriggerExit2D(Collider2D other)

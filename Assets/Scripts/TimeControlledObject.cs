@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.TestTools;
 
 public class TimeControlledObject : MonoBehaviour
 {
@@ -14,6 +17,8 @@ public class TimeControlledObject : MonoBehaviour
 
     private float timeOffset;
     private float noiseScale;
+
+    public List<Transform> busPassengers = new List<Transform>();
     
     // Start is called before the first frame update
     void Start()
@@ -68,6 +73,8 @@ public class TimeControlledObject : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        var lastPosition = actualObject.transform.position;
+        
         var currentTime = timeController.currentTime + timeOffset;
         // find out in which keyframe we are.
         float t = currentTime % totalLoopTime;
@@ -95,5 +102,10 @@ public class TimeControlledObject : MonoBehaviour
         // add local noise, but how?
         actualObject.transform.localScale *= (1f + FourierNoise(2f * currentTime) * 0.2f);
         actualObject.transform.Rotate(Vector3.back, FourierNoise(5f * currentTime + 123f));
+
+        foreach (var player in this.busPassengers)
+        {
+            player.transform.position = player.transform.position + actualObject.transform.position - lastPosition;
+        }
     }
 }

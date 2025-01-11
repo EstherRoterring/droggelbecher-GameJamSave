@@ -11,32 +11,48 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D playerBody;
     public float walkSpeed = 1.5f;
     public float jumpforce;
-    public bool groundIsTouched;
-    public bool plattformIsTouched;
+    public Collider2D groundIsTouched;
     public Transform PlayerFeet;
     public LayerMask canJumpOn;
+
+    public TimeControlledObject travellingOnPlatform = null;
     
     //Controlls
     public KeyCode jump;
     public KeyCode left;
     public KeyCode down;
     public KeyCode right;
-    
+
     // level boundary
     public GameObject levelBoundary;
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //Abfrage ob player auf boden
+        if (travellingOnPlatform)
+        {
+            travellingOnPlatform.busPassengers.Remove(this.transform);
+        }
         groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.1f, canJumpOn);
+        travellingOnPlatform = null;
+        if (groundIsTouched)
+        {
+            ColliderOnPlatform colliderOnPlatform = null;
+            Debug.Log(groundIsTouched.gameObject);
+            if (groundIsTouched.gameObject.TryGetComponent<ColliderOnPlatform>(out colliderOnPlatform))
+            {
+                travellingOnPlatform = colliderOnPlatform.platform;
+                travellingOnPlatform.busPassengers.Add(this.transform);
+            }
+        }
 
         //WASD Steuerung
         if (Input.GetKey(jump) && groundIsTouched)
@@ -62,13 +78,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("We left a trigger");
         if (other.gameObject == levelBoundary)
         {
+            Debug.Log("We died.");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-
-
 }
-

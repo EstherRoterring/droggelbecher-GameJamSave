@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class AntonsConeFactory : MonoBehaviour
 {
-    private PolygonCollider2D shapeGivingCollider;
+    public PolygonCollider2D shapeGivingCollider;
     private MeshFilter myMeshFilter;
 
     // Start is called before the first frame update
     void Start()
     {
-        shapeGivingCollider = GetComponent<PolygonCollider2D>();
-        myMeshFilter = GetComponent<MeshFilter>();  
-        Debug.Log(shapeGivingCollider);
+        myMeshFilter = GetComponent<MeshFilter>();
 
         myMeshFilter.mesh = ConifyCollider(shapeGivingCollider, 1.0f);
     }

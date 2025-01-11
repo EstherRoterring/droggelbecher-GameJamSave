@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Abfrage ob player auf boden
-        groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.5f, canJumpOn);
+        groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.1f, canJumpOn);
 
         //WASD Steuerung
         if (Input.GetKey(jump) && groundIsTouched)
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         //Make Player Child of thet Plattform
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == levelBoundary)
         {

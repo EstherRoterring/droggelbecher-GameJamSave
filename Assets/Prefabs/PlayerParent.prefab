@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTime: 0
   autoTimeScale: 0
-  controllingObjectDistanceScale: 10
+  controllingObjectDistanceScale: 1.5
   controllingObject: {fileID: 3817191011364627044}
   minControllingObjectPositionChange: 0.01
   isTimeChanging: 0

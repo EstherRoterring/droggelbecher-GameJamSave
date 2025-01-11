@@ -42,11 +42,11 @@ public class PlayerController : MonoBehaviour
             travellingOnPlatform.busPassengers.Remove(this.transform);
         }
         groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.1f, canJumpOn);
+        Debug.Log(groundIsTouched);
         travellingOnPlatform = null;
         if (groundIsTouched)
         {
             ColliderOnPlatform colliderOnPlatform = null;
-            Debug.Log(groundIsTouched.gameObject);
             if (groundIsTouched.gameObject.TryGetComponent<ColliderOnPlatform>(out colliderOnPlatform))
             {
                 travellingOnPlatform = colliderOnPlatform.platform;

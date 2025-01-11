@@ -14,7 +14,6 @@ public class EnemyFollowingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //hochfliegen = false;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         //aktuelle Rotation bekommen -> standard
         rotation = transform.eulerAngles;

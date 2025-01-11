@@ -8,7 +8,7 @@ public class TimeController : MonoBehaviour
 
     public float autoTimeScale;
     public float controllingObjectDistanceScale;
-    public GameObject controllingObject;
+    public PlayerController controllingObject;
     public float minControllingObjectPositionChange = 0.0001f;
 
     public bool isTimeChanging = false;
@@ -27,8 +27,7 @@ public class TimeController : MonoBehaviour
         if (controllingObjectPositionInitialized)
         {
             var positionChange = (controllingObject.transform.position - oldControllingObjectPosition).magnitude;
-            Debug.Log(positionChange);
-            if (positionChange > minControllingObjectPositionChange)
+            if (positionChange > minControllingObjectPositionChange || !controllingObject.groundIsTouched)
             {
                 currentTime += this.controllingObjectDistanceScale * Time.deltaTime;
             }

@@ -198,13 +198,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3817191011364627044}
   playerBody: {fileID: 459367648052889266}
-  walkSpeed: 1
+  walkSpeed: 5
   jumpforce: 5
   groundIsTouched: {fileID: 0}
   PlayerFeet: {fileID: 1180244016987486989}
   canJumpOn:
     serializedVersion: 2
     m_Bits: 256
+  playerID: 0
   renderer: {fileID: 4984516826798545175}
   travellingOnPlatform: {fileID: 0}
   jump: 119

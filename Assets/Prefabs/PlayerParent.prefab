@@ -197,8 +197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3817191011364627044}
   playerBody: {fileID: 459367648052889266}
-  walkSpeed: 2000
-  jumpforce: 10000
+  walkSpeed: 1
+  jumpforce: 5
   groundIsTouched: {fileID: 0}
   PlayerFeet: {fileID: 1180244016987486989}
   canJumpOn:
@@ -226,8 +226,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d50c8ff670e645d38133a8e867ea072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildings: []
-  buildingCameraShifts: []
+  buildings:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buildingCameraShifts:
+  - {x: -0.5, y: -0.2}
+  - {x: -0.25, y: -0.1}
+  - {x: -0.1, y: -0.05}
+  - {x: -0.15, y: -0.02}
+  - {x: 0, y: 0}
   myCamera: {fileID: 0}
 --- !u!1 &5662865341718500623
 GameObject:

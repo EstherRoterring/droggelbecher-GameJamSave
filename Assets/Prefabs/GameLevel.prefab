@@ -977,12 +977,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staticPlatformColors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0.9411765, b: 0.8666667, a: 1}
-  - {r: 1, g: 1, b: 0.95686275, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.9325, b: 0.85, a: 1}
+  - {r: 1, g: 0.9313263, b: 0.8443396, a: 1}
+  - {r: 1, g: 0.9235, b: 0.83, a: 1}
+  - {r: 1, g: 0.91899997, b: 0.82, a: 1}
   movingPlatformColors:
-  - {r: 0.3504361, g: 0.9843137, b: 0.990566, a: 0}
+  - {r: 0.6933962, g: 0.8334199, b: 1, a: 1}
+  - {r: 0.68, g: 0.8276924, b: 1, a: 1}
+  - {r: 0.66999996, g: 0.82230777, b: 1, a: 1}
+  - {r: 0.65999997, g: 0.8169232, b: 1, a: 1}
 --- !u!1 &3165878168758488503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3116,6 +3119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1239048963622298923}
+  - component: {fileID: 4229222708763748179}
   m_Layer: 0
   m_Name: Player2Level
   m_TagString: Untagged
@@ -3142,6 +3146,28 @@ Transform:
   - {fileID: 6271506946494138763}
   m_Father: {fileID: 6242396814818557929}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4229222708763748179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7625349439210755902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dee5d2ca134d406ab8d526fc040568c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staticPlatformColors:
+  - {r: 0.87, g: 0.9532, b: 1, a: 1}
+  - {r: 0.86, g: 0.95032257, b: 1, a: 1}
+  - {r: 0.85, g: 0.9458333, b: 1, a: 1}
+  - {r: 0.84000003, g: 0.9424, b: 1, a: 1}
+  movingPlatformColors:
+  - {r: 1, g: 0.8315604, b: 0.6084906, a: 1}
+  - {r: 1, g: 0.828, b: 0.6, a: 1}
+  - {r: 1, g: 0.8237, b: 0.59000003, a: 1}
+  - {r: 1, g: 0.8194, b: 0.58000004, a: 1}
 --- !u!1 &7663114701683282385
 GameObject:
   m_ObjectHideFlags: 0

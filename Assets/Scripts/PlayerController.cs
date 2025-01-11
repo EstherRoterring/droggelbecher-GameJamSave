@@ -63,8 +63,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Jump key states
-        float jumpAxis = playerID == 0 ? Input.GetAxis("Jump") : Input.GetAxis("Jump P2");
+		// // jumping
+		float jumpAxis = playerID == 0 ? Input.GetAxis("Jump") : Input.GetAxis("Jump P2");
         bool pressedThisFrame = jumpAxis > 0;
         if (pressedThisFrame)
         {
@@ -84,12 +84,19 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("RELEASED JUMP!");
         }
-
-		if (Input.GetKey(jump) && groundIsTouched)
+		if (jumpKeyPressed && !groundIsTouched)
+		{
+			Debug.Log("jump prevented! Mid AIR!!");
+		}
+		if (jumpKeyPressed && groundIsTouched)
+		{
+			playerBody.AddForce(jumpforce * Vector2.up, ForceMode2D.Impulse);
+		}
+        if (jumpKeyReleased && !groundIsTouched)
         {
-            playerBody.AddForce(Vector2.up * jumpforce);
+            playerBody.AddForce(jumpInterruptForce * Vector2.down, ForceMode2D.Impulse);
         }
-        
+
         // change sprites
         if (groundIsTouched)
         {
@@ -112,16 +119,6 @@ public class PlayerController : MonoBehaviour
 
         // flip sprite
         shouldFlip = playerBody.velocity.x < 0;
-
-        // jumping
-        if (jumpKeyPressed && groundIsTouched)
-        {
-            playerBody.AddForce(jumpforce * Vector2.up, ForceMode2D.Impulse);
-        }
-        if (jumpKeyReleased && !groundIsTouched)
-        {
-            playerBody.AddForce(jumpInterruptForce * Vector2.down, ForceMode2D.Impulse);
-        }
 	}
 
 	private void OnTriggerExit2D(Collider2D other)

@@ -137,7 +137,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -199,7 +199,8 @@ MonoBehaviour:
   player: {fileID: 3817191011364627044}
   playerBody: {fileID: 459367648052889266}
   walkSpeed: 5
-  jumpforce: 5
+  jumpforce: 15
+  jumpInterruptForce: 5
   groundIsTouched: {fileID: 0}
   PlayerFeet: {fileID: 1180244016987486989}
   canJumpOn:
@@ -257,7 +258,7 @@ MonoBehaviour:
   currentTime: 0
   autoTimeScale: 0
   controllingObjectDistanceScale: 1
-  controllingObject: {fileID: 3817191011364627044}
+  controllingObject: {fileID: 4900537498139940212}
   minControllingObjectPositionChange: 0.0001
   isTimeChanging: 0
 --- !u!1 &5662865341718500623

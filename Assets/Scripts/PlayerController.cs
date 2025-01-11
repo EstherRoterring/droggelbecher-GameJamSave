@@ -40,22 +40,22 @@ public class PlayerController : MonoBehaviour
         //WASD Steuerung
         if (Input.GetKey(jump) && groundIsTouched)
         {
-            playerBody.AddForce(Vector2.up * jumpforce);
+            playerBody.AddForce(Vector2.up * jumpforce * Time.deltaTime);
         }
 
         if (Input.GetKey(left))
         {
-            playerBody.AddForce(Vector2.left * walkSpeed);
+            playerBody.AddForce(Vector2.left * walkSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(down))
         {
-            playerBody.AddForce(Vector2.down * walkSpeed);
+            playerBody.AddForce(Vector2.down * walkSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(right))
         {
-            playerBody.AddForce(Vector2.right * walkSpeed);
+            playerBody.AddForce(Vector2.right * walkSpeed * Time.deltaTime);
         }
     }
 

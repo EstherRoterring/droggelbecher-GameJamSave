@@ -196,17 +196,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3817191011364627044}
   playerBody: {fileID: 459367648052889266}
-  walkSpeed: 1.5
-  jumpforce: 10
+  walkSpeed: 2000
+  jumpforce: 10000
   groundIsTouched: 0
   plattformIsTouched: 0
   PlayerFeet: {fileID: 1180244016987486989}
   canJumpOn:
     serializedVersion: 2
     m_Bits: 256
-  shouldMoveWith:
-    serializedVersion: 2
-    m_Bits: 0
   jump: 119
   left: 97
   down: 115

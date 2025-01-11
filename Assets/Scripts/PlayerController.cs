@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     public bool plattformIsTouched;
     public Transform PlayerFeet;
     public LayerMask canJumpOn;
-    public LayerMask shouldMoveWith;
     
     //Controlls
     public KeyCode jump;
@@ -58,12 +57,6 @@ public class PlayerController : MonoBehaviour
         {
             playerBody.AddForce(Vector2.right * walkSpeed);
         }
-
-
-        //Player soll mit Plattform bewegen
-        //Abfrage ob Player auf Plattform
-
-        //Make Player Child of thet Plattform
     }
 
     private void OnTriggerExit(Collider other)
@@ -73,5 +66,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("player dies!!!");
         }
     }
+
+
 }
 

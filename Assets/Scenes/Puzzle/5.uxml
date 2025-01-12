@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=0ec88d7d690204cd59b664c33cb9d1e0&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement name="Contianer" style="flex-grow: 1; color: rgb(255, 255, 255);">
+        <ui:VisualElement name="Contianer" style="flex-grow: 1; color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Scenes/Puzzle/layer6.png?fileID=2800000&amp;guid=d3675a77af6ba45dca787d4b505f4938&amp;type=3#layer6&quot;); -unity-background-scale-mode: scale-and-crop;" />
+    </ui:VisualElement>
+</ui:UXML>

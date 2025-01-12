@@ -82,12 +82,14 @@ public class LevelMenuScript : MonoBehaviour
     {
         Debug.Log($"Level {levelIndex} clicked");
         GlobalSceneManager.INSTANCE.ScheduleTransitionToScene(levelIndex);
+        gameObject.SetActive(false);
     }
 
     private void OnBackClick(ClickEvent evt)
     {
         Debug.Log("You Pressed the Back Button");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameObject.SetActive(false);
     }
 
     private void OnAllButtonsClick(ClickEvent evt)

@@ -16,6 +16,8 @@ public class TimeControlledObject : MonoBehaviour
     private float timeOffset;
     private float noiseScale;
 
+    public float maxOffset = 0.5f;
+
     public List<Transform> busPassengers = new List<Transform>();
     
     // Start is called before the first frame update
@@ -109,4 +111,30 @@ public class TimeControlledObject : MonoBehaviour
             Gizmos.DrawLine(keyFrame.transform.position, nextKeyFrame.transform.position);
         }
     }
+
+    private void OnTriggerEnter2D (Collider2D other)
+    {
+        Debug.Log("Bus beruhrt was");
+        if (other.CompareTag("Player")) 
+        {
+            Debug.Log("Player steit ein");
+            busPassengers.Add(other.transform);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            float distanceToPlatform = Vector3.Distance(other.transform.position, actualObject.transform.position);
+            // Wenn der Spieler zu schnell wegrutscht, halte ihn noch für einen kleinen Offset
+            if (distanceToPlatform < maxOffset)
+            {
+                return; 
+            }
+
+            busPassengers.Remove(other.transform);
+        }
+    }
+
 }

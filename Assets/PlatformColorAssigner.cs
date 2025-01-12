@@ -18,7 +18,7 @@ public class PlatformColorAssigner : MonoBehaviour
                 comp.colors = staticPlatformColors;
             }
 
-            comp.Start();
+            // comp.Start();
         }
     }
 

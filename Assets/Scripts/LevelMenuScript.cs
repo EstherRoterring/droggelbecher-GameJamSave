@@ -81,7 +81,7 @@ public class LevelMenuScript : MonoBehaviour
     private void OnLevelClick(ClickEvent evt, int levelIndex)
     {
         Debug.Log($"Level {levelIndex} clicked");
-        GlobalSceneManager.INSTANCE.TransitionToScene(levelIndex);
+        GlobalSceneManager.INSTANCE.ScheduleTransitionToScene(levelIndex);
     }
 
     private void OnBackClick(ClickEvent evt)

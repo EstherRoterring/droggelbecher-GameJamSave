@@ -53,15 +53,17 @@ public class PlayerController : MonoBehaviour
         }
         groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.2f, canJumpOn);
         travellingOnPlatform = null;
-        if (groundIsTouched)
-        {
-            ColliderOnPlatform colliderOnPlatform = null;
-            if (groundIsTouched.gameObject.TryGetComponent<ColliderOnPlatform>(out colliderOnPlatform))
-            {
-                travellingOnPlatform = colliderOnPlatform.platform;
-                travellingOnPlatform.busPassengers.Add(this.transform);  // todo, add me again
-            }
-        }
+       
+       
+        //if (groundIsTouched)
+        //{
+        //    ColliderOnPlatform colliderOnPlatform = null;
+        //    if (groundIsTouched.gameObject.TryGetComponent<ColliderOnPlatform>(out colliderOnPlatform))
+        //    {
+        //        travellingOnPlatform = colliderOnPlatform.platform;
+        //       travellingOnPlatform.busPassengers.Add(this.transform);  // todo, add me again
+         //   }
+        //}
 
 		// // jumping
 		float jumpAxis = playerID == 0 ? Input.GetAxis("Jump") : Input.GetAxis("Jump P2");

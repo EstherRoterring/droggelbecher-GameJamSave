@@ -396,6 +396,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3271782447857305769, guid: 6bec9c5357b204b9e919496eff1fb5ca, type: 3}
   m_PrefabInstance: {fileID: 236332216}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &280765234 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5484814422491573846, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+  m_PrefabInstance: {fileID: 853856020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &281795881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -706,9 +711,25 @@ PrefabInstance:
       value: PlayerCam
       objectReference: {fileID: 0}
     - target: {fileID: 7869591387866212907, guid: d20c517da51674263969fc590a779bc5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 578291566}
+    - target: {fileID: 7869591387866212907, guid: d20c517da51674263969fc590a779bc5, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 578291566}
+    - target: {fileID: 7869591387866212907, guid: d20c517da51674263969fc590a779bc5, type: 3}
+      propertyPath: boundary
+      value: 
+      objectReference: {fileID: 280765234}
+    - target: {fileID: 7869591387866212907, guid: d20c517da51674263969fc590a779bc5, type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 817730747}
+    - target: {fileID: 7869591387866212907, guid: d20c517da51674263969fc590a779bc5, type: 3}
+      propertyPath: cameraSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1260,6 +1281,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894dc4adfb331464d991447f7ff3c010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &817730747 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 765107934518333379, guid: d20c517da51674263969fc590a779bc5, type: 3}
+  m_PrefabInstance: {fileID: 488964262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &852828350
 PrefabInstance:
   m_ObjectHideFlags: 0

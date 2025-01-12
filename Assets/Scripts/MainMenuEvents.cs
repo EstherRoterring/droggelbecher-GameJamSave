@@ -13,11 +13,11 @@ public class MainMenuEvents : MonoBehaviour
 
     private List<Button> _menuButtons = new List<Button>();
 
-    private AudioSource _audioSource;
+    [SerializeField] AudioClip ButtonClick;
 
     private void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
+        // _audioSource = GetComponent<AudioSource>();
         _document = GetComponent<UIDocument>();
 
         _menuButtons = _document.rootVisualElement.Query<Button>().ToList();
@@ -59,7 +59,7 @@ public class MainMenuEvents : MonoBehaviour
     private void OnAllButtonsClick(ClickEvent evt)
     {
 
-        _audioSource.Play();
+        SoundManager.Instance.Play(ButtonClick);
     }
 
 }

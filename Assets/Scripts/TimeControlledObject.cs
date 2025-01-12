@@ -17,7 +17,6 @@ public class TimeControlledObject : MonoBehaviour
     private float noiseScale;
 
 
-    public List<Transform> busPassengers = new List<Transform>();
     
     // Start is called before the first frame update
     void Start()

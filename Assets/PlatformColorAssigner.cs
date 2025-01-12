@@ -6,7 +6,7 @@ public class PlatformColorAssigner : MonoBehaviour
     public Color[] staticPlatformColors;
     public Color[] movingPlatformColors;
 
-    private void Awake()
+    private void Start()
     {
         foreach (var comp in GetComponentsInChildren<RandomColorSelector>())
         {
@@ -17,6 +17,8 @@ public class PlatformColorAssigner : MonoBehaviour
             } else {
                 comp.colors = staticPlatformColors;
             }
+
+            comp.Start();
         }
     }
 

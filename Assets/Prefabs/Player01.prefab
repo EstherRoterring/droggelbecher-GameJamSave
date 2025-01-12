@@ -52,6 +52,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player01
       objectReference: {fileID: 0}
+    - target: {fileID: 4754615615577351777, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754615615577351777, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348496895744435436, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
+      propertyPath: m_Name
+      value: Player1Cam
+      objectReference: {fileID: 0}
     - target: {fileID: 7557932731711123022, guid: 01053ccba5350884f9fc94d83c199feb, type: 3}
       propertyPath: controllingObject
       value: 

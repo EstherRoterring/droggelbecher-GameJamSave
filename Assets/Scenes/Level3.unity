@@ -2455,6 +2455,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -8.22
       objectReference: {fileID: 0}
+    - target: {fileID: 5483821489288598683, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: walkSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5526103446786269106, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
       propertyPath: m_IsActive
       value: 0

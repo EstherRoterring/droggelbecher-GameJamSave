@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GlobalScript : MonoBehaviour
 {
+    public SomeoneDiedController someoneDiedController;
+    
     void Update()
     {
+        if (someoneDiedController.someoneDied)
+        {
+            return; // don't die again.
+        }
         if (Input.GetKeyDown(KeyCode.R))
         {
             GlobalSceneManager.INSTANCE.ScheduleReloadScene();

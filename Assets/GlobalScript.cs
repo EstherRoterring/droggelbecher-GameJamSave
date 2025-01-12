@@ -18,5 +18,11 @@ public class GlobalScript : MonoBehaviour
             someoneDiedController.someoneDied = true;
             GlobalSceneManager.INSTANCE.ScheduleReloadScene();
         }
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            someoneDiedController.someoneDied = true;
+            GlobalSceneManager.INSTANCE.ScheduleTransitionToScene(1);
+        }
     }
 }

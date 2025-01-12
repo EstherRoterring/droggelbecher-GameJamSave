@@ -48,7 +48,7 @@ public class MainMenuEvents : MonoBehaviour
     {
         Debug.Log("You Pressed the Start Button");
         GlobalSceneManager.INSTANCE.TransitionToScene(2);
-	}
+    }
 
     private void OnLevelsClick(ClickEvent evt)
     {

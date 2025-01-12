@@ -1540,6 +1540,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fede99c32cd4d2b995ce509cf341fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &736849329 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3341505382981843569, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+  m_PrefabInstance: {fileID: 1339417583}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &738511194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1949,6 +1954,11 @@ Transform:
   - {fileID: 582986461}
   m_Father: {fileID: 648940429}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1050507454 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6991815498681771619, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+  m_PrefabInstance: {fileID: 1339417583}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1085367166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2509,6 +2519,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.68
       objectReference: {fileID: 0}
+    - target: {fileID: 4863169582902365337, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 1050507454}
     - target: {fileID: 5007738808141586534, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 49
@@ -2585,6 +2599,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.42
       objectReference: {fileID: 0}
+    - target: {fileID: 8138121910930142201, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 736849329}
     - target: {fileID: 8951017425460779764, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
       propertyPath: keyFrameDuration
       value: 2

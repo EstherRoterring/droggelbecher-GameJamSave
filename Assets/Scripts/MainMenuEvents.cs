@@ -51,7 +51,7 @@ public class MainMenuEvents : MonoBehaviour
     private void OnStartGameClick(ClickEvent evt)
     {
         Debug.Log("You Pressed the Start Button");
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(2);
     }
 
     private void OnLevelsClick(ClickEvent evt)

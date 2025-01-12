@@ -56,15 +56,19 @@ public class ScaleWobbleFrame : MonoBehaviour
         opening = false;
     }
 
+    public bool FrameClosingOrClosed()
+    {
+        return animation_timer >= 0;  
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (!opening && !closing)
-        {
-            if (animation_timer == 0.0f) PlayOpeningAnimation();
-            if (animation_timer == anim_time) PlayClosingAnimation();
-        }
-
+        //if (!opening && !closing)
+        //{
+        //    if (animation_timer == 0.0f) PlayOpeningAnimation();
+        //    if (animation_timer == anim_time) PlayClosingAnimation();
+        //}
         if (opening)
         {
             animation_timer += Time.deltaTime;

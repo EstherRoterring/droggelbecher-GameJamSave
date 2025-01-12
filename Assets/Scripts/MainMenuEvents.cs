@@ -15,6 +15,8 @@ public class MainMenuEvents : MonoBehaviour
 
     private AudioSource _audioSource;
 
+    private GlobalSceneManager sceneManager;
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -32,6 +34,8 @@ public class MainMenuEvents : MonoBehaviour
         {
             _menuButtons[i].RegisterCallback<ClickEvent>(OnAllButtonsClick);
         }
+
+        sceneManager = (SceneManager)FindObjectOfType<typeof(SceneManager)>();
     }
 
     private void OnDisable()

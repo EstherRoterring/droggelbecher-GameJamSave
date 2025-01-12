@@ -115,13 +115,15 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject == levelBoundary)
         {
             Debug.Log("Wir sind gestorben.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GlobalSceneManager.INSTANCE.ReloadScene();
+            Destroy(this);
         }
 
         if (other.gameObject.tag == "Enemy")
         {
             Debug.Log("Wir sind durch einen Gegner gestorben.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+			GlobalSceneManager.INSTANCE.ReloadScene();
+            Destroy(this);
+		}
     }
 }

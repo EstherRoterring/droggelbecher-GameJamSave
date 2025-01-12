@@ -17,7 +17,7 @@ public class GlobalSceneManager : MonoBehaviour
 
     private int currentSceneIndex = 0;
 
-    private float sceneChangeTimer = 0.0f;
+    public float sceneChangeTimer = 0.0f;
     private int nextSceneIndex = 0;
 
     // Start is called before the first frame update
@@ -53,15 +53,20 @@ public class GlobalSceneManager : MonoBehaviour
         return sceneChangeTimer > 0.0f;
     }
 
-    public void TransitionToNextScene()
+    public void TransitionToNextScene(float timeBeforeSceneChange = 3.0f)
     {
-        TransitionToScene(currentSceneIndex + 1);
+        TransitionToScene(currentSceneIndex + 1, timeBeforeSceneChange);
     }
 
     public void LoadMainMenu()
     {
 		SceneManager.LoadScene(1);
 	}
+
+    public void ReloadScene(float timeBeforeSceneChange = 3.0f)
+    {
+        TransitionToScene(currentSceneIndex, timeBeforeSceneChange);
+    }
 
     public void TransitionToScene(int sceneIndex, float timeBeforeSceneChange = 3.0f)
     {

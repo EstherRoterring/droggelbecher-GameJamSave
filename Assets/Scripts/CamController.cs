@@ -40,7 +40,7 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    private void Update()
+	private void Update()
     {
         // Ensure the player is assigned
         if (_player != null && _boundaryCollider != null)

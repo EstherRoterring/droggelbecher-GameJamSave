@@ -36,7 +36,7 @@ public class ScaleWobbleFrame : MonoBehaviour
         {
             myChildren.Add(child);
             myChildrenBaseScales.Add(Random.Range(atom_base_scale_min, atom_base_scale_max));
-            Debug.Log("added children");
+            //Debug.Log("added children");
         }
 		PlayOpeningAnimation();
         DontDestroyOnLoad(this);
@@ -44,14 +44,14 @@ public class ScaleWobbleFrame : MonoBehaviour
 
     public void PlayOpeningAnimation()
     {
-        animation_timer = 0.0f;
+        animation_timer = anim_time;
         opening = true;
         closing = false;
     }
 
     public void PlayClosingAnimation()
     {
-        animation_timer = anim_time;
+        animation_timer = 0.0f;
         closing = true;
         opening = false;
     }
@@ -69,27 +69,26 @@ public class ScaleWobbleFrame : MonoBehaviour
         //    if (animation_timer == 0.0f) PlayOpeningAnimation();
         //    if (animation_timer == anim_time) PlayClosingAnimation();
         //}
-        if (opening)
+        if (closing)
         {
             animation_timer += Time.deltaTime;
             if (animation_timer >= anim_time)
             {
                 animation_timer = anim_time;
-                opening = false;
+                closing = false;
             }
         }
-        if (closing)
+        if (opening)
         {
 			animation_timer -= Time.deltaTime;
 			if (animation_timer <= 0)
 			{
 				animation_timer = 0;
-				closing = false;
+				opening = false;
 			}
 		}
 
         float anim_progress = Mathf.Min(1.0f, animation_timer / anim_time);
-        Debug.Log(anim_progress);
 		global_scale = (1.0f - anim_progress) * min_scale + anim_progress * max_scale;
 
         for (int i = 0; i < myChildren.Count; i++)

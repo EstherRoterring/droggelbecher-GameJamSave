@@ -82,6 +82,7 @@ public class GlobalSceneManager : MonoBehaviour
     {
 		SceneManager.LoadScene(nextSceneIndex);
         currentSceneIndex = nextSceneIndex;
+        Debug.Log("Playing Level Opening Animation");
 		transitionFrameP1.PlayOpeningAnimation();
         transitionFrameP2.PlayOpeningAnimation();
 	}

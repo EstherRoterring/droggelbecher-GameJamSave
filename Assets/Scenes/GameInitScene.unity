@@ -357,6 +357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: frame P1
       objectReference: {fileID: 0}
+    - target: {fileID: 4961373854595284344, guid: ee869bbec995b8146905ea117e670481, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

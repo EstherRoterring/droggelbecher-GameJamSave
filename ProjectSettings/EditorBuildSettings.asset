@@ -24,14 +24,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Puzzle/Puzzle1.unity
     guid: e732fbcfa35fd41cca038fb5208ac8a8
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
-    guid: 50955bfc3993145d2a2584676f6ed9c1
-  - enabled: 1
-    path: Assets/Scenes/Puzzle/Puzzle2.unity
-    guid: 25573fe8c614b4564b22e416514c5c93
-  - enabled: 1
-    path: Assets/Scenes/Level3.unity
-    guid: a27d59487f5d84375a3b07a0fafd3fc5
+    path: Assets/Scenes/Level5.unity
+    guid: 4aac50385193c4441bb32dc479547f8f
   - enabled: 1
     path: Assets/Scenes/Puzzle/Puzzle3.unity
     guid: af8c2ee0425b642b38b614f72adb26ba
@@ -42,8 +36,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Puzzle/Puzzle4.unity
     guid: 80370dd22a0f84deca1fa22dd44f44bc
   - enabled: 1
-    path: Assets/Scenes/Level5.unity
-    guid: 4aac50385193c4441bb32dc479547f8f
+    path: Assets/Scenes/Level2.unity
+    guid: 50955bfc3993145d2a2584676f6ed9c1
+  - enabled: 1
+    path: Assets/Scenes/Puzzle/Puzzle2.unity
+    guid: 25573fe8c614b4564b22e416514c5c93
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: a27d59487f5d84375a3b07a0fafd3fc5
   - enabled: 1
     path: Assets/Scenes/Puzzle/Puzzle5.unity
     guid: 2db19a97cb39d4582be09b475eac7f38

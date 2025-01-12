@@ -646,7 +646,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collect all puzzle pieces to restore your collected memory!
+  m_text: Collect all puzzle pieces to restore your past memory!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e378e3979f8ca49b2b72fb02ddd26488, type: 2}
   m_sharedMaterial: {fileID: 6948053287159625117, guid: e378e3979f8ca49b2b72fb02ddd26488, type: 2}
@@ -1261,7 +1261,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Re-start with 'R'
+  m_text: 'Re
+
+    start with ''R'''
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e378e3979f8ca49b2b72fb02ddd26488, type: 2}
   m_sharedMaterial: {fileID: 6948053287159625117, guid: e378e3979f8ca49b2b72fb02ddd26488, type: 2}
@@ -1762,7 +1764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Re-start with 'R'
+  m_text: Restart with 'R'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e378e3979f8ca49b2b72fb02ddd26488, type: 2}
   m_sharedMaterial: {fileID: 6948053287159625117, guid: e378e3979f8ca49b2b72fb02ddd26488, type: 2}
@@ -2546,7 +2548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collect all puzzle pieces to restore your collected memory!
+  m_text: Collect all puzzle pieces to restore your past memory!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e378e3979f8ca49b2b72fb02ddd26488, type: 2}
   m_sharedMaterial: {fileID: 6948053287159625117, guid: e378e3979f8ca49b2b72fb02ddd26488, type: 2}

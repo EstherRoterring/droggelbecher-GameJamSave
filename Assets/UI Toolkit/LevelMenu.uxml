@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=0ec88d7d690204cd59b664c33cb9d1e0&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement name="Buildings" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Start%20Screen/platform.png?fileID=2800000&amp;guid=1b9cbc304af1241a7a2e8f8dd032365f&amp;type=3#platform&quot;);">
+        <ui:VisualElement name="Ropes" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Start%20Screen/ropes.png?fileID=2800000&amp;guid=99f1fa1a52bc349a0978b7607cbdc9b0&amp;type=3#ropes&quot;);">
+            <ui:VisualElement name="Contianer" style="flex-grow: 1; color: rgb(255, 255, 255);">
+                <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back" class="button" style="background-image: none; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px;" />
+                <ui:VisualElement name="Row1" style="flex-grow: 1; justify-content: center; align-items: stretch; align-self: auto; -unity-text-align: middle-left; flex-direction: row;">
+                    <ui:Button text="Tutorial" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Tutorial" class="button" style="background-image: none; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px;" />
+                    <ui:Button text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="1" class="button" style="background-image: none; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; justify-content: space-around;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Row2" style="flex-grow: 1; justify-content: center; align-items: stretch; align-self: auto; -unity-text-align: middle-left; flex-direction: row;">
+                    <ui:Button text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="2" class="button" style="background-image: none; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px;" />
+                    <ui:Button text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="3" class="button" style="background-image: none; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; justify-content: space-around;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Row3" style="flex-grow: 1; flex-direction: row; justify-content: center; margin-bottom: 150px;">
+                    <ui:Button text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" name="4" class="button" style="background-image: none; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px;" />
+                    <ui:Button text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="5" class="button" style="background-image: none; margin-top: 100px; margin-right: 100px; margin-bottom: 100px; margin-left: 100px; justify-content: space-around;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -12,6 +12,12 @@ public class SceneManagerScript : MonoBehaviour
     public static bool playerOneInGoal;
     public static bool playerTwoInGoal;
 
+    void Start()
+    {
+        playerOneInGoal = false;
+        playerTwoInGoal = false;
+    }
+
     // Update is called once per frame
     void Update()
     {

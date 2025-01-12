@@ -16,7 +16,6 @@ public class TimeControlledObject : MonoBehaviour
     private float timeOffset;
     private float noiseScale;
 
-    public float maxOffset = 0.5f;
 
     public List<Transform> busPassengers = new List<Transform>();
     
@@ -93,10 +92,7 @@ public class TimeControlledObject : MonoBehaviour
         actualObject.transform.localScale *= (1f + FourierNoise(2f * currentTime) * 0.2f);
         actualObject.transform.Rotate(Vector3.back, FourierNoise(5f * currentTime + 123f));
 
-        foreach (var player in this.busPassengers)
-        {
-            player.transform.position = player.transform.position + actualObject.transform.position - lastPosition;
-        }
+ 
     }
     
     private void OnDrawGizmos()
@@ -112,29 +108,5 @@ public class TimeControlledObject : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D (Collider2D other)
-    {
-        Debug.Log("Bus beruhrt was");
-        if (other.CompareTag("Player")) 
-        {
-            Debug.Log("Player steit ein");
-            busPassengers.Add(other.transform);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            float distanceToPlatform = Vector3.Distance(other.transform.position, actualObject.transform.position);
-            // Wenn der Spieler zu schnell wegrutscht, halte ihn noch für einen kleinen Offset
-            if (distanceToPlatform < maxOffset)
-            {
-                return; 
-            }
-
-            busPassengers.Remove(other.transform);
-        }
-    }
 
 }

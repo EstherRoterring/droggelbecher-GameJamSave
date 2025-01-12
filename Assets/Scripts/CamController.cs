@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 
 	private void Update()
     {
-        var cameraZ = myCamera.transform.position.z;
+        float cameraZ = -50;
         var oldPosition = myCamera.transform.position;
         var diff = player.transform.position - oldPosition;
         if (diff.magnitude <= cameraSpeed * Time.deltaTime)

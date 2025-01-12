@@ -11,12 +11,6 @@ public class SceneManagerScript : MonoBehaviour
 
     public static bool playerOneInGoal;
     public static bool playerTwoInGoal;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -26,7 +20,6 @@ public class SceneManagerScript : MonoBehaviour
         if(playerOneInGoal && playerTwoInGoal){
             LoadNextScene();
         }
-        
     }
     public void LoadNextScene()
     {
@@ -46,12 +39,12 @@ public class SceneManagerScript : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other){
         Debug.Log("Something goaled");
         //Player kommen ins Ziel
-        if(other == player01)
+        if(other == player01 && !playerOneInGoal)
         {
             GlobalSceneManager.INSTANCE.transitionFrameP1.PlayClosingAnimation();
 			playerOneInGoal = true;
         }
-        if(other == player02)
+        if(other == player02 && !playerTwoInGoal)
         {
 			GlobalSceneManager.INSTANCE.transitionFrameP2.PlayClosingAnimation();
 			playerTwoInGoal = true;

@@ -8,6 +8,8 @@ public class MainMenuEvents : MonoBehaviour
 {
     private UIDocument _document;
 
+    [SerializeField] public GameObject _levelMenu;
+
     private Button _start_button;
     private Button _levels_button;
 
@@ -17,8 +19,11 @@ public class MainMenuEvents : MonoBehaviour
 
     private void Awake()
     {
+        _levelMenu.SetActive(false);
         // _audioSource = GetComponent<AudioSource>();
         _document = GetComponent<UIDocument>();
+
+        //_levelMenu = GameObject.Find("LevelMenu");
 
         _menuButtons = _document.rootVisualElement.Query<Button>().ToList();
 
@@ -53,7 +58,8 @@ public class MainMenuEvents : MonoBehaviour
     private void OnLevelsClick(ClickEvent evt)
     {
         Debug.Log("You Pressed the Levels Button");
-        // TODO: Transition to some scene
+        _levelMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     private void OnAllButtonsClick(ClickEvent evt)

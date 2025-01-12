@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		GetComponentInChildren<SpriteRenderer>().enabled = false;
         GetComponentInChildren<CapsuleCollider2D>().enabled = false;
-		GlobalSceneManager.INSTANCE.ScheduleReloadScene(3.0f, "Spieler gestorben");
+		GlobalSceneManager.INSTANCE.ScheduleReloadScene();
 	}
 
     private void OnTriggerExit2D(Collider2D other)

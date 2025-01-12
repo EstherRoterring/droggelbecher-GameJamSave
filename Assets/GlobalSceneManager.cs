@@ -58,7 +58,7 @@ public class GlobalSceneManager : MonoBehaviour
         return sceneChangeTimer > 0.0f;
     }
 
-    public void ScheduleTransitionToNextScene(float timeBeforeSceneChange = 3.0f)
+    public void ScheduleTransitionToNextScene(float timeBeforeSceneChange = 1.5f)
     {
         ScheduleTransitionToScene(currentSceneIndex + 1, timeBeforeSceneChange, "next level!");
     }
@@ -68,12 +68,12 @@ public class GlobalSceneManager : MonoBehaviour
 		SceneManager.LoadScene(1);
 	}
 
-    public void ScheduleReloadScene(float timeBeforeSceneChange = 3.0f, string msg = "nix")
+    public void ScheduleReloadScene(float timeBeforeSceneChange = 1.5f, string msg = "nix")
     {
         ScheduleTransitionToScene(currentSceneIndex, timeBeforeSceneChange, msg);
     }
 
-    public void ScheduleTransitionToScene(int sceneIndex, float timeBeforeSceneChange = 3.0f, string msg = "nix")
+    public void ScheduleTransitionToScene(int sceneIndex, float timeBeforeSceneChange = 1.5f, string msg = "nix")
     {
         Debug.Log("TRANSITION QUEUED! " + msg);
 

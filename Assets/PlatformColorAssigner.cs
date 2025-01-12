@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlatformColorAssigner : MonoBehaviour
@@ -17,5 +18,10 @@ public class PlatformColorAssigner : MonoBehaviour
                 comp.colors = staticPlatformColors;
             }
         }
+    }
+
+    private void Update()
+    {
+        Debug.Log(GetComponentsInChildren<RandomColorSelector>().Length);
     }
 }

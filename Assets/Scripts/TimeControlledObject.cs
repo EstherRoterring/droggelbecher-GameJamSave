@@ -106,6 +106,4 @@ public class TimeControlledObject : MonoBehaviour
             Gizmos.DrawLine(keyFrame.transform.position, nextKeyFrame.transform.position);
         }
     }
-
-
 }

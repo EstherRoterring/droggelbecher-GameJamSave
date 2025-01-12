@@ -52,7 +52,7 @@ public class MainMenuEvents : MonoBehaviour
     private void OnStartGameClick(ClickEvent evt)
     {
         Debug.Log("You Pressed the Start Button");
-        GlobalSceneManager.INSTANCE.TransitionToScene(2);
+        GlobalSceneManager.INSTANCE.ScheduleTransitionToScene(2);
     }
 
     private void OnLevelsClick(ClickEvent evt)

@@ -11,22 +11,16 @@ public class SceneManagerScript : MonoBehaviour
 
     public static bool playerOneInGoal;
     public static bool playerTwoInGoal;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Player1 :" + playerOneInGoal + "Player2:" + playerTwoInGoal);
-
+        // Debug.Log("Player1 :" + playerOneInGoal + "Player2:" + playerTwoInGoal);
+        
+        Debug.Log("update" + playerOneInGoal + " - "+ playerTwoInGoal);
         if(playerOneInGoal && playerTwoInGoal){
             LoadNextScene();
         }
-        
     }
     public void LoadNextScene()
     {
@@ -35,7 +29,7 @@ public class SceneManagerScript : MonoBehaviour
 
         if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
         {
-            GlobalSceneManager.INSTANCE.TransitionToNextScene();
+            GlobalSceneManager.INSTANCE.ScheduleTransitionToNextScene();
         }
         else
         {
@@ -44,18 +38,18 @@ public class SceneManagerScript : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D other){
-        Debug.Log("Something goaled");
         //Player kommen ins Ziel
-        if(other == player01)
+        // ultra hack, keine ahnung??
+        if(other.gameObject.ToString() == player01.gameObject.ToString() && !playerOneInGoal)
         {
-            GlobalSceneManager.INSTANCE.transitionFrameP1.PlayClosingAnimation();
+            // GlobalSceneManager.INSTANCE.transitionFrameP1.PlayClosingAnimation();
 			playerOneInGoal = true;
         }
-        if(other == player02)
+        if(other.gameObject.ToString() == player02.gameObject.ToString() && !playerTwoInGoal)
         {
-			GlobalSceneManager.INSTANCE.transitionFrameP2.PlayClosingAnimation();
+			// GlobalSceneManager.INSTANCE.transitionFrameP2.PlayClosingAnimation();
 			playerTwoInGoal = true;
         }
-    
+        Debug.Log("a" + playerOneInGoal + "b" + playerTwoInGoal);
     }
 }

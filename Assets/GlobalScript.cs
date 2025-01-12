@@ -15,6 +15,7 @@ public class GlobalScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
+            someoneDiedController.someoneDied = true;
             GlobalSceneManager.INSTANCE.ScheduleReloadScene();
         }
     }

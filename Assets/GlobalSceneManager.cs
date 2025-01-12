@@ -11,8 +11,8 @@ public class GlobalSceneManager : MonoBehaviour
         Debug.Log("Constructed a new scene manager");
         if (INSTANCE == null)
         {
-			INSTANCE = this;
-		}
+            INSTANCE = this;
+        }
     }
 
     public static GlobalSceneManager INSTANCE;
@@ -31,8 +31,8 @@ public class GlobalSceneManager : MonoBehaviour
     {
         currentSceneIndex = 0;
         DontDestroyOnLoad(gameObject);
-		SceneManager.LoadScene(1);
-	}
+        SceneManager.LoadScene(1);
+    }
 
     // Update is called once per frame
     void Update()
@@ -43,7 +43,12 @@ public class GlobalSceneManager : MonoBehaviour
             if (sceneChangeTimer < 0)
             {
                 DoTransition();
-			}
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Screen.fullScreen = !Screen.fullScreen;
         }
     }
 
@@ -64,8 +69,8 @@ public class GlobalSceneManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
-		SceneManager.LoadScene(1);
-	}
+        SceneManager.LoadScene(1);
+    }
 
     public void ScheduleReloadScene(float timeBeforeSceneChange = 1.5f, string msg = "nix")
     {
@@ -98,13 +103,13 @@ public class GlobalSceneManager : MonoBehaviour
 
     private void DoTransition()
     {
-		sceneChangeTimer = -1;
-		currentSceneIndex = nextSceneIndex;
+        sceneChangeTimer = -1;
+        currentSceneIndex = nextSceneIndex;
         Debug.Log("Playing Level Opening Animation");
         SceneManager.LoadScene(nextSceneIndex);
         transitionFrameP1.PlayOpeningAnimation();
         transitionFrameP2.PlayOpeningAnimation();
-		sceneChangeTimer = -1;
+        sceneChangeTimer = -1;
         transitionQueued = false;
-	}
+    }
 }

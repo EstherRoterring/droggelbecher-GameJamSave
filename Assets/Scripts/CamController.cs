@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameObject _player; // Reference to the player GameObject
 
-    private void Update()
+	private void Update()
     {
         // Ensure the player is assigned
         if (_player != null)

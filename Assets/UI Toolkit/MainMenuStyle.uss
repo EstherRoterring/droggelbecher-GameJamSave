@@ -35,6 +35,3 @@
     align-items: stretch;
     -unity-text-align: middle-center;
 }
-
-.backgoundLayer {
-}

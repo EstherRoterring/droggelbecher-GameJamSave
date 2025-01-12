@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeController : MonoBehaviour
 {
@@ -9,12 +10,13 @@ public class TimeController : MonoBehaviour
     public float autoTimeScale;
     public float controllingObjectDistanceScale;
     public PlayerController controllingObject;
-    public float minControllingObjectPositionChange = 0.0001f;
+    public float minControllingTimeChange = 0.0001f;
 
     public bool isTimeChanging = false;
     
     private bool controllingObjectPositionInitialized = false;
     private Vector3 oldControllingObjectPosition = Vector3.zero;
+    public float lastTimeMoved;
 
     private List<TimeControlledObject> registeredObjects = new List<TimeControlledObject>();
 
@@ -27,7 +29,11 @@ public class TimeController : MonoBehaviour
         if (controllingObjectPositionInitialized)
         {
             var positionChange = (controllingObject.transform.position - oldControllingObjectPosition).magnitude;
-            if (positionChange > minControllingObjectPositionChange || !controllingObject.groundIsTouched)
+            if (positionChange > 0.0000000001f || !controllingObject.groundIsTouched)
+            {
+                lastTimeMoved = Time.time;
+            }
+            if (lastTimeMoved >= Time.time - minControllingTimeChange)
             {
                 currentTime += this.controllingObjectDistanceScale * Time.deltaTime;
             }

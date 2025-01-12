@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GlobalSceneManager : MonoBehaviour
 {
+    public GlobalSceneManager()
+    {
+        INSTANCE = this;
+    }
+
+    public static GlobalSceneManager INSTANCE;
+
     public ScaleWobbleFrame transitionFrameP1;
     public ScaleWobbleFrame transitionFrameP2;
 
@@ -19,7 +26,7 @@ public class GlobalSceneManager : MonoBehaviour
         currentSceneIndex = 0;
 		sceneChangeTimer = 0;
         DontDestroyOnLoad(gameObject);
-		SceneManager.LoadScene("oldMainMenuScene");
+		SceneManager.LoadScene(1);
 	}
 
     // Update is called once per frame
@@ -53,7 +60,7 @@ public class GlobalSceneManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
-		SceneManager.LoadScene("oldMainMenuScene");
+		SceneManager.LoadScene(1);
 	}
 
     public void TransitionToScene(int sceneIndex, float timeBeforeSceneChange = 3.0f)
@@ -75,5 +82,7 @@ public class GlobalSceneManager : MonoBehaviour
     {
 		SceneManager.LoadScene(nextSceneIndex);
         currentSceneIndex = nextSceneIndex;
+		transitionFrameP1.PlayOpeningAnimation();
+        transitionFrameP2.PlayOpeningAnimation();
 	}
 }

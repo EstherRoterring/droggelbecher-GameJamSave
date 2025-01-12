@@ -15,8 +15,6 @@ public class MainMenuEvents : MonoBehaviour
 
     private AudioSource _audioSource;
 
-    private GlobalSceneManager sceneManager;
-
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -34,8 +32,6 @@ public class MainMenuEvents : MonoBehaviour
         {
             _menuButtons[i].RegisterCallback<ClickEvent>(OnAllButtonsClick);
         }
-
-        sceneManager = (SceneManager)FindObjectOfType<typeof(SceneManager)>();
     }
 
     private void OnDisable()
@@ -51,12 +47,13 @@ public class MainMenuEvents : MonoBehaviour
     private void OnStartGameClick(ClickEvent evt)
     {
         Debug.Log("You Pressed the Start Button");
-        SceneManager.LoadScene(2);
-    }
+        GlobalSceneManager.INSTANCE.TransitionToScene(2);
+	}
 
     private void OnLevelsClick(ClickEvent evt)
     {
         Debug.Log("You Pressed the Levels Button");
+        // TODO: Transition to some scene
     }
 
     private void OnAllButtonsClick(ClickEvent evt)

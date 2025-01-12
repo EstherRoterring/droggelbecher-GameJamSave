@@ -305,7 +305,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionFrameP1: {fileID: 543273433}
   transitionFrameP2: {fileID: 1881651121}
-  timeBeforeSceneChange: 3
 --- !u!1001 &543273432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,6 +424,10 @@ PrefabInstance:
     - target: {fileID: 3924301409554726051, guid: ee869bbec995b8146905ea117e670481, type: 3}
       propertyPath: m_Name
       value: frame P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098744528908008906, guid: ee869bbec995b8146905ea117e670481, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

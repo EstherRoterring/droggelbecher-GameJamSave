@@ -21,6 +21,17 @@ public class CameraController : MonoBehaviour
             myCamera.transform.position = oldPosition + cameraSpeed * Time.deltaTime * diff;
         }
 
+        // clamping
+
+        float halfHeight = myCamera.orthographicSize;
+        float halfWidth = myCamera.aspect * halfHeight;
+        Debug.Log("Camera" + halfWidth + "x" + halfHeight);
+        
+        myCamera.transform.position = Vector3.Max(boundary.bounds.min + new Vector3(halfWidth, halfHeight, 0), myCamera.transform.position);
+        myCamera.transform.position = Vector3.Min(boundary.bounds.max - new Vector3(halfWidth, halfHeight,0), myCamera.transform.position);
+
+        // reset z
         myCamera.transform.position = new Vector3(myCamera.transform.position.x, myCamera.transform.position.y, cameraZ);
+        
     }
 }

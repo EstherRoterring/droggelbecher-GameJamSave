@@ -3385,6 +3385,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9193934457709685755}
     - target: {fileID: 7171754937733755231, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 3341505382981843569}
+    - target: {fileID: 7171754937733755231, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
       propertyPath: buildings.Array.data[0]
       value: 
       objectReference: {fileID: 5216076214409995298}
@@ -3936,6 +3940,10 @@ PrefabInstance:
       propertyPath: levelBoundary
       value: 
       objectReference: {fileID: 8965766043359724721}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 6991815498681771619}
     - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: buildings.Array.data[0]
       value: 

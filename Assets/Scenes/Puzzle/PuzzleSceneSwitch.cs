@@ -45,6 +45,7 @@ public class PuzzleSceneSwitch : MonoBehaviour
     {
         Debug.Log("You Pressed the Button");
         GlobalSceneManager.INSTANCE.ScheduleTransitionToScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
 

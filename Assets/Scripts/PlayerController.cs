@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
     public GameObject player;
     public Rigidbody2D playerBody;
     public float walkSpeed = 1.5f;
@@ -22,14 +21,14 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer renderer;
 
     public TimeControlledObject travellingOnPlatform = null;
-    
-    //Controlls
+
+    // Controlls
     public KeyCode jump;
     public KeyCode left;
     public KeyCode down;
     public KeyCode right;
 
-    // level boundary
+    // Level boundary
     public GameObject levelBoundary;
 
     public Sprite idleSprite;
@@ -42,97 +41,86 @@ public class PlayerController : MonoBehaviour
     private bool jumpKeyPressed;
     private bool jumpKeyReleased;
 
-    // Update is called once per frame
+    private float coyoteTimeCounter = 0f; // Kurzzeitiges Springen nach Verlassen des Bodens
+    private const float coyoteTime = 0.2f;
+
+    private float jumpBufferCounter = 0f; // Sprung-Pufferung
+    private const float jumpBufferTime = 0.2f;
+
     void Update()
     {
-		//Abfrage ob player auf boden
-		if (travellingOnPlatform)
-        {
-            Debug.Log("nicht mehr drauf?");
-            travellingOnPlatform.busPassengers.Remove(this.transform);
-        }
+        // Überprüfung: Ist der Spieler auf dem Boden?
         groundIsTouched = Physics2D.OverlapCircle(PlayerFeet.position, 0.2f, canJumpOn);
-        travellingOnPlatform = null;
-       
-       
-        //if (groundIsTouched)
-        //{
-        //    ColliderOnPlatform colliderOnPlatform = null;
-        //    if (groundIsTouched.gameObject.TryGetComponent<ColliderOnPlatform>(out colliderOnPlatform))
-        //    {
-        //        travellingOnPlatform = colliderOnPlatform.platform;
-        //       travellingOnPlatform.busPassengers.Add(this.transform);  // todo, add me again
-         //   }
-        //}
 
-		// // jumping
-		float jumpAxis = playerID == 0 ? Input.GetAxis("Jump") : Input.GetAxis("Jump P2");
-        bool pressedThisFrame = jumpAxis > 0;
-        if (pressedThisFrame)
-        {
-            jumpKeyPressed = !jumpKeyDown;
-		}
-        else
-        {
-			jumpKeyReleased = jumpKeyDown;
-        }
-        jumpKeyDown = pressedThisFrame;
-
-        if (jumpKeyPressed) 
-        {
-            Debug.Log("PRESSED JUMP!");
-        }
-        if (jumpKeyReleased)
-        {
-            Debug.Log("RELEASED JUMP!");
-        }
-		if (jumpKeyPressed && !groundIsTouched)
-		{
-			Debug.Log("jump prevented! Mid AIR!!");
-		}
-		if (jumpKeyPressed && groundIsTouched)
-		{
-			playerBody.AddForce(jumpforce * Vector2.up, ForceMode2D.Impulse);
-		}
-        if (jumpKeyReleased && !groundIsTouched)
-        {
-            playerBody.AddForce(jumpInterruptForce * Vector2.down, ForceMode2D.Impulse);
-        }
-
-        // change sprites
+        // Coyote-Zeit: Ermöglicht das Springen kurz nach Verlassen des Bodens
         if (groundIsTouched)
         {
-            renderer.sprite = idleSprite;
+            coyoteTimeCounter = coyoteTime;
         }
         else
         {
-            renderer.sprite = jumpingSprite;
+            coyoteTimeCounter -= Time.deltaTime;
         }
+
+        // Sprung-Pufferung: Speichert Sprung-Eingaben für kurze Zeit
+        if (Input.GetKeyDown(jump))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
+        // Springen
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
+        {
+            playerBody.velocity = new Vector2(playerBody.velocity.x, jumpforce);
+            jumpBufferCounter = 0;
+        }
+
+        // Sprung abbrechen (für kürzere Sprünge)
+        if (Input.GetKeyUp(jump) && playerBody.velocity.y > 0)
+        {
+            playerBody.velocity = new Vector2(playerBody.velocity.x, playerBody.velocity.y * 0.5f);
+        }
+
+        // Ändern des Sprites basierend auf Bewegung
+        renderer.sprite = groundIsTouched ? idleSprite : jumpingSprite;
         renderer.flipX = shouldFlip;
     }
 
-	private void FixedUpdate()
-	{
-        // Horizontal Movement
-        float horizontal_movement = playerID == 0 ? Input.GetAxis("Horizontal") : Input.GetAxis("Horizontal P2");
+    private void FixedUpdate()
+    {
+        // Horizontale Bewegung
+        float horizontalInput = playerID == 0 ? Input.GetAxis("Horizontal") : Input.GetAxis("Horizontal P2");
+        float targetSpeed = horizontalInput * walkSpeed;
 
-        // maybe very shit
-        playerBody.velocity = new Vector2(horizontal_movement * walkSpeed, playerBody.velocity.y);
+        // Sanfte Anpassung der horizontalen Geschwindigkeit
+        float speedDifference = targetSpeed - playerBody.velocity.x;
+        float acceleration = Mathf.Abs(speedDifference) > 0.1f ? 10f : 15f; // Beschleunigung und Verzögerung
+        float movement = speedDifference * acceleration * Time.fixedDeltaTime;
 
-        // flip sprite
-        shouldFlip = playerBody.velocity.x < 0;
-	}
+        playerBody.velocity = new Vector2(playerBody.velocity.x + movement, playerBody.velocity.y);
 
-	private void OnTriggerExit2D(Collider2D other)
+        // Flip Sprite basierend auf der Richtung
+        if (horizontalInput != 0)
+        {
+            shouldFlip = horizontalInput < 0;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject == levelBoundary)
         {
-            Debug.Log("We died.");
+            Debug.Log("Wir sind gestorben.");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        if (other.gameObject.tag == "Enemy"){
-            Debug.Log("We died from Enemy.");
+        if (other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Wir sind durch einen Gegner gestorben.");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

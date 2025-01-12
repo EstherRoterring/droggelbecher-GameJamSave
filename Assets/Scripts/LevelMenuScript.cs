@@ -40,7 +40,7 @@ public class LevelMenuScript : MonoBehaviour
         // register level Buttons and store callbacks
         for (int i = 0; i < _levelButtons.Count; i++)
         {
-            int levelIndex = i + 2; // Capture the current loop variable
+            int levelIndex = 2 + (i * 2); // Capture the current loop variable
             var callback = new EventCallback<ClickEvent>(evt => OnLevelClick(evt, levelIndex));
             _levelButtons[i].RegisterCallback(callback);
             _buttonCallbacks[_levelButtons[i]] = callback;

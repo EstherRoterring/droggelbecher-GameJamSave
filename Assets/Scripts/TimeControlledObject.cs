@@ -90,8 +90,6 @@ public class TimeControlledObject : MonoBehaviour
         // add local noise, but how?
         actualObject.transform.localScale *= (1f + FourierNoise(2f * currentTime) * 0.2f);
         actualObject.transform.Rotate(Vector3.back, FourierNoise(5f * currentTime + 123f));
-
- 
     }
     
     private void OnDrawGizmos()

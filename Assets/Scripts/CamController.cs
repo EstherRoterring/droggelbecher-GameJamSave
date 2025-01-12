@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 
 	private void Update()
     {
-        var cameraZ = myCamera.transform.position.z;
+        float cameraZ = -50;
         var oldPosition = myCamera.transform.position;
         var diff = player.transform.position - oldPosition;
         if (diff.magnitude <= cameraSpeed * Time.deltaTime)
@@ -21,6 +21,16 @@ public class CameraController : MonoBehaviour
             myCamera.transform.position = oldPosition + cameraSpeed * Time.deltaTime * diff;
         }
 
+        // clamping
+
+        float halfHeight = myCamera.orthographicSize;
+        float halfWidth = myCamera.aspect * halfHeight;
+        
+        myCamera.transform.position = Vector3.Max(boundary.bounds.min + new Vector3(halfWidth, halfHeight, 0), myCamera.transform.position);
+        myCamera.transform.position = Vector3.Min(boundary.bounds.max - new Vector3(halfWidth, halfHeight,0), myCamera.transform.position);
+
+        // reset z
         myCamera.transform.position = new Vector3(myCamera.transform.position.x, myCamera.transform.position.y, cameraZ);
+        
     }
 }

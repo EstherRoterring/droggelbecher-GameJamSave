@@ -29,7 +29,7 @@ public class TimeController : MonoBehaviour
         if (controllingObjectPositionInitialized)
         {
             var positionChange = (controllingObject.transform.position - oldControllingObjectPosition).magnitude;
-            if (positionChange > 0.0000000001f || !controllingObject.groundIsTouched)
+            if (positionChange > 0.1f || !controllingObject.groundIsTouched)
             {
                 lastTimeMoved = Time.time;
             }

@@ -17,11 +17,11 @@ public class ParallaxEffect : MonoBehaviour
         if (!initialized)
         {
             initialized = true;
-            playerOrigin = this.transform.position;
+            playerOrigin = myCamera.transform.position;
         }
         
         // compute perspective w.r.t. player (player == this)
-        var playerOffset = this.transform.position - playerOrigin;
+        var playerOffset = myCamera.transform.position - playerOrigin;
 
         for (var i = 0; i < buildings.Length; i++)
         {

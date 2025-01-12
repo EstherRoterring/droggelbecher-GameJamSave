@@ -1352,6 +1352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6242396814818557929}
   - component: {fileID: 8532613165144256278}
+  - component: {fileID: 9029782973248646789}
   m_Layer: 0
   m_Name: GameLevel
   m_TagString: Untagged
@@ -1391,6 +1392,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f072de9dc2944a8b71656ef9baf10b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9029782973248646789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396967895089393905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d414a830d75514477815f4ba2801c2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someoneDied: 0
 --- !u!1 &4486483708373848877
 GameObject:
   m_ObjectHideFlags: 0
@@ -3622,6 +3636,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9193934457709685755}
     - target: {fileID: 7171754937733755231, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 3341505382981843569}
+    - target: {fileID: 7171754937733755231, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
       propertyPath: buildings.Array.data[0]
       value: 
       objectReference: {fileID: 5216076214409995298}
@@ -3657,6 +3675,10 @@ PrefabInstance:
       propertyPath: canJumpOn.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 7845324913892403549, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
+      propertyPath: someoneDiedController
+      value: 
+      objectReference: {fileID: 9029782973248646789}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4173,6 +4195,14 @@ PrefabInstance:
       propertyPath: levelBoundary
       value: 
       objectReference: {fileID: 8965766043359724721}
+    - target: {fileID: 306734240108528773, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: someoneDiedController
+      value: 
+      objectReference: {fileID: 9029782973248646789}
+    - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 6991815498681771619}
     - target: {fileID: 803537690431347847, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: buildings.Array.data[0]
       value: 

@@ -31,7 +31,6 @@ public class EnemyFollowingController : MonoBehaviour
         float a = transform.position.x;
         float b = target.position.x;
         float richtung = a - b;
-        Debug.Log(richtung);
 
         if (richtung < 0)
         {

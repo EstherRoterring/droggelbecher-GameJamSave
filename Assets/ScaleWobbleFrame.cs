@@ -58,7 +58,7 @@ public class ScaleWobbleFrame : MonoBehaviour
 
     public bool FrameClosingOrClosed()
     {
-        return animation_timer >= 0;  
+        return animation_timer > 0;  
     }
 
     // Update is called once per frame

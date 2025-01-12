@@ -112,8 +112,9 @@ public class PlayerController : MonoBehaviour
 
     private void Death()
     {
-		GetComponent<Rigidbody2D>().isKinematic = false;
-		GetComponent<SpriteRenderer>().enabled = false;
+		GetComponent<Rigidbody2D>().gravityScale = 0;
+		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+		GetComponentInChildren<SpriteRenderer>().enabled = false;
 		GlobalSceneManager.INSTANCE.ReloadScene();
 	}
 

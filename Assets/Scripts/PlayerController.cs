@@ -110,18 +110,43 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Death()
+    {
+		GetComponent<Rigidbody2D>().isKinematic = false;
+		GetComponent<SpriteRenderer>().enabled = false;
+		GlobalSceneManager.INSTANCE.ReloadScene();
+	}
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject == levelBoundary)
         {
             Debug.Log("Wir sind gestorben.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Death();
         }
 
-        if (other.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Wir sind durch einen Gegner gestorben.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
+		if (other.gameObject.tag == "Enemy")
+		{
+			Debug.Log("Wir sind durch einen Gegner gestorben.");
+            Death();
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "Enemy")
+		{
+			Debug.Log("Wir sind durch einen Gegner gestorben.");
+            Death();
+		}
+	}
+
+	private void OnTriggerStay2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "Enemy")
+		{
+			Debug.Log("Wir sind durch einen Gegner gestorben.");
+			Death();
+		}
+	}
 }

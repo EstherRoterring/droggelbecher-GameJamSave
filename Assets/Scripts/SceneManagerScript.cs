@@ -35,7 +35,7 @@ public class SceneManagerScript : MonoBehaviour
 
         if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
         {
-            SceneManager.LoadScene(currentSceneIndex + 1);
+            GlobalSceneManager.INSTANCE.TransitionToNextScene();
         }
         else
         {
@@ -46,11 +46,15 @@ public class SceneManagerScript : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other){
         Debug.Log("Something goaled");
         //Player kommen ins Ziel
-        if(other == player01){
-            playerOneInGoal = true;
+        if(other == player01)
+        {
+            GlobalSceneManager.INSTANCE.transitionFrameP1.PlayClosingAnimation();
+			playerOneInGoal = true;
         }
-            if(other == player02){
-            playerTwoInGoal = true;
+        if(other == player02)
+        {
+			GlobalSceneManager.INSTANCE.transitionFrameP2.PlayClosingAnimation();
+			playerTwoInGoal = true;
         }
     
     }

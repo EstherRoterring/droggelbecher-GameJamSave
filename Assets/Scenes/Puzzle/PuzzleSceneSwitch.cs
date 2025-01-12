@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-using UnityEditor.SearchService;
 
 public class PuzzleSceneSwitch : MonoBehaviour
 {
@@ -45,7 +44,7 @@ public class PuzzleSceneSwitch : MonoBehaviour
     {
         Debug.Log("You Pressed the Button");
         GlobalSceneManager.INSTANCE.ScheduleTransitionToScene(SceneManager.GetActiveScene().buildIndex + 1);
-        
+
     }
 
 

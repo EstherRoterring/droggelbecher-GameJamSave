@@ -15,7 +15,7 @@ public class SceneManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Player1 :" + playerOneInGoal + "Player2:" + playerTwoInGoal);
+        // Debug.Log("Player1 :" + playerOneInGoal + "Player2:" + playerTwoInGoal);
 
         if(playerOneInGoal && playerTwoInGoal){
             LoadNextScene();
@@ -28,7 +28,7 @@ public class SceneManagerScript : MonoBehaviour
 
         if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
         {
-            GlobalSceneManager.INSTANCE.TransitionToNextScene();
+            GlobalSceneManager.INSTANCE.ScheduleTransitionToNextScene();
         }
         else
         {

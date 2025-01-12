@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
@@ -22,7 +23,7 @@ public class GlobalSceneManager : MonoBehaviour
 
     private int currentSceneIndex = 0;
 
-    public float sceneChangeTimer = 0.0f;
+    public float sceneChangeTimer = -1;
     private int nextSceneIndex = 0;
     private bool transitionQueued = false;
 
@@ -30,7 +31,6 @@ public class GlobalSceneManager : MonoBehaviour
     void Start()
     {
         currentSceneIndex = 0;
-		sceneChangeTimer = 0;
         DontDestroyOnLoad(gameObject);
 		SceneManager.LoadScene(1);
 	}
@@ -43,7 +43,6 @@ public class GlobalSceneManager : MonoBehaviour
             sceneChangeTimer -= Time.deltaTime;
             if (sceneChangeTimer < 0)
             {
-                sceneChangeTimer = 0;
                 DoTransition();
 			}
         }
@@ -59,9 +58,9 @@ public class GlobalSceneManager : MonoBehaviour
         return sceneChangeTimer > 0.0f;
     }
 
-    public void TransitionToNextScene(float timeBeforeSceneChange = 3.0f)
+    public void ScheduleTransitionToNextScene(float timeBeforeSceneChange = 3.0f)
     {
-        TransitionToScene(currentSceneIndex + 1, timeBeforeSceneChange, "next level!");
+        ScheduleTransitionToScene(currentSceneIndex + 1, timeBeforeSceneChange, "next level!");
     }
 
     public void LoadMainMenu()
@@ -69,12 +68,12 @@ public class GlobalSceneManager : MonoBehaviour
 		SceneManager.LoadScene(1);
 	}
 
-    public void ReloadScene(float timeBeforeSceneChange = 3.0f, string msg = "nix")
+    public void ScheduleReloadScene(float timeBeforeSceneChange = 3.0f, string msg = "nix")
     {
-        TransitionToScene(currentSceneIndex, timeBeforeSceneChange, msg);
+        ScheduleTransitionToScene(currentSceneIndex, timeBeforeSceneChange, msg);
     }
 
-    public void TransitionToScene(int sceneIndex, float timeBeforeSceneChange = 3.0f, string msg = "nix")
+    public void ScheduleTransitionToScene(int sceneIndex, float timeBeforeSceneChange = 3.0f, string msg = "nix")
     {
         Debug.Log("TRANSITION QUEUED! " + msg);
 
@@ -100,13 +99,13 @@ public class GlobalSceneManager : MonoBehaviour
 
     private void DoTransition()
     {
-		sceneChangeTimer = 0;
+		sceneChangeTimer = -1;
 		currentSceneIndex = nextSceneIndex;
         Debug.Log("Playing Level Opening Animation");
-		transitionFrameP1.PlayOpeningAnimation();
-        transitionFrameP2.PlayOpeningAnimation();
         SceneManager.LoadScene(nextSceneIndex);
-		sceneChangeTimer = 0;
+        transitionFrameP1.PlayOpeningAnimation();
+        transitionFrameP2.PlayOpeningAnimation();
+		sceneChangeTimer = -1;
         transitionQueued = false;
 	}
 }

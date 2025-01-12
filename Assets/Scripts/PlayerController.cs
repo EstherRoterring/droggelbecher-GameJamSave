@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public TimeControlledObject travellingOnPlatform = null;
 
+    public bool died = false;
+
     // Controlls
     public KeyCode jump;
     public KeyCode left;
@@ -112,11 +114,16 @@ public class PlayerController : MonoBehaviour
 
     private void Death()
     {
+	    if (died)
+	    {
+		    return; // don't die again.
+	    }
+	    died = true;
 		GetComponent<Rigidbody2D>().gravityScale = 0;
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		GetComponentInChildren<SpriteRenderer>().enabled = false;
         GetComponentInChildren<CapsuleCollider2D>().enabled = false;
-		GlobalSceneManager.INSTANCE.ReloadScene(3.0f, "Spieler gestorben");
+		GlobalSceneManager.INSTANCE.ScheduleReloadScene(3.0f, "Spieler gestorben");
 	}
 
     private void OnTriggerExit2D(Collider2D other)

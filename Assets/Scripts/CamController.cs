@@ -25,7 +25,6 @@ public class CameraController : MonoBehaviour
 
         float halfHeight = myCamera.orthographicSize;
         float halfWidth = myCamera.aspect * halfHeight;
-        Debug.Log("Camera" + halfWidth + "x" + halfHeight);
         
         myCamera.transform.position = Vector3.Max(boundary.bounds.min + new Vector3(halfWidth, halfHeight, 0), myCamera.transform.position);
         myCamera.transform.position = Vector3.Min(boundary.bounds.max - new Vector3(halfWidth, halfHeight,0), myCamera.transform.position);

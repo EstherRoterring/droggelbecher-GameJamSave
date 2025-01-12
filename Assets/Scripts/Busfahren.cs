@@ -4,8 +4,7 @@ using UnityEngine;
 public class Busfahren : MonoBehaviour
 {
     public GameObject actualObject;
-
-
+    
     public float maxOffset = 0.5f;
 
     public List<Transform> busPassengers = new List<Transform>();

@@ -8,7 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject player;
+	public SomeoneDiedController someoneDiedController;
+
+	public GameObject player;
     public Rigidbody2D playerBody;
     public float walkSpeed = 1.5f;
     public float jumpforce = 1.0f;
@@ -21,9 +23,7 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer renderer;
 
     public TimeControlledObject travellingOnPlatform = null;
-
-    public bool died = false;
-
+    
     // Controlls
     public KeyCode jump;
     public KeyCode left;
@@ -114,11 +114,11 @@ public class PlayerController : MonoBehaviour
 
     private void Death()
     {
-	    if (died)
+	    if (someoneDiedController.someoneDied)
 	    {
 		    return; // don't die again.
 	    }
-	    died = true;
+	    someoneDiedController.someoneDied = true;
 		GetComponent<Rigidbody2D>().gravityScale = 0;
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		GetComponentInChildren<SpriteRenderer>().enabled = false;

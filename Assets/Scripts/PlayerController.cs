@@ -124,12 +124,4 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Wir sind durch einen Gegner gestorben.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
 }

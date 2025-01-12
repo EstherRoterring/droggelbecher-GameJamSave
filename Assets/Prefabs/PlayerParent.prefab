@@ -259,8 +259,9 @@ MonoBehaviour:
   autoTimeScale: 0
   controllingObjectDistanceScale: 1
   controllingObject: {fileID: 4900537498139940212}
-  minControllingObjectPositionChange: 0.0001
+  minControllingTimeChange: 0.1
   isTimeChanging: 0
+  lastTimeMoved: 0
 --- !u!1 &5662865341718500623
 GameObject:
   m_ObjectHideFlags: 0

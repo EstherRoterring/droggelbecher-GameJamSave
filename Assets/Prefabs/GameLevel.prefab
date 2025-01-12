@@ -3944,10 +3944,6 @@ PrefabInstance:
       propertyPath: controllingObject
       value: 
       objectReference: {fileID: 9193934457709685755}
-    - target: {fileID: 4612018431933846119, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
-      propertyPath: minControllingTimeChange
-      value: 0.005
-      objectReference: {fileID: 0}
     - target: {fileID: 7171754937733755231, guid: 0eebf14a2c284e344b108e1b4da3709a, type: 3}
       propertyPath: buildings.Array.data[0]
       value: 
@@ -4505,7 +4501,7 @@ PrefabInstance:
       objectReference: {fileID: 5483821489288598683}
     - target: {fileID: 2927517946906607551, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: minControllingTimeChange
-      value: 0.005
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8150931222795107594, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

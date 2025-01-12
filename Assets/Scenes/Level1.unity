@@ -1408,6 +1408,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1015406468}
     m_Modifications:
+    - target: {fileID: 303459809664921024, guid: 6bec9c5357b204b9e919496eff1fb5ca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 53fc1f88a89e749f59be8466e4c4b0b5, type: 3}
     - target: {fileID: 3211956334796534808, guid: 6bec9c5357b204b9e919496eff1fb5ca, type: 3}
       propertyPath: m_Name
       value: Goal
@@ -1451,6 +1455,14 @@ PrefabInstance:
     - target: {fileID: 3271782447857305769, guid: 6bec9c5357b204b9e919496eff1fb5ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668889610254804289, guid: 6bec9c5357b204b9e919496eff1fb5ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668889610254804289, guid: 6bec9c5357b204b9e919496eff1fb5ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2471,6 +2483,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 177299947295133070, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 177299947295133070, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21.6
+      objectReference: {fileID: 0}
     - target: {fileID: 777780532305695348, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2611,6 +2631,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.42
       objectReference: {fileID: 0}
+    - target: {fileID: 7462715943103327914, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7581ceabede834e5b9b471545125be35, type: 3}
+    - target: {fileID: 7795344141759300879, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7581ceabede834e5b9b471545125be35, type: 3}
     - target: {fileID: 8138121910930142201, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
       propertyPath: myCamera
       value: 

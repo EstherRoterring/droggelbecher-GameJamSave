@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=0ec88d7d690204cd59b664c33cb9d1e0&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement name="Contianer" style="flex-grow: 1; color: rgb(255, 255, 255);">
+        <ui:VisualElement name="Deady" style="flex-grow: 1; color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sprites/Death/toll.png?fileID=2800000&amp;guid=2c68e1a3b98bf4b1f920028751d5a52d&amp;type=3#toll&quot;); height: 79px;">
+            <ui:VisualElement name="Deady" style="flex-grow: 1; color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sprites/Death/skull.png?fileID=2800000&amp;guid=d6bc67539025548528257a2ea85b5822&amp;type=3#skull&quot;);" />
+        </ui:VisualElement>
+        <ui:Button text="Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackToHome" class="button" />
+    </ui:VisualElement>
+</ui:UXML>

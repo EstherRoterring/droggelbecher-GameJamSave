@@ -833,6 +833,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 177299947295133070, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 177299947295133070, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 629685525288959559, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.9
@@ -840,6 +848,14 @@ PrefabInstance:
     - target: {fileID: 629685525288959559, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
       propertyPath: m_LocalPosition.y
       value: -7.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840087099263676826, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840087099263676826, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.3
       objectReference: {fileID: 0}
     - target: {fileID: 3195661307162388644, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -861,6 +877,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4.8
       objectReference: {fileID: 0}
+    - target: {fileID: 5274068405459319067, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c567041bda4824c3f80916aa5f0d5769, type: 3}
     - target: {fileID: 5483821489288598683, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
       propertyPath: walkSpeed
       value: 10
@@ -921,6 +941,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 7.4
       objectReference: {fileID: 0}
+    - target: {fileID: 7795344141759300879, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b93461bbd471a41ebbb602a115e51e4b, type: 3}
     - target: {fileID: 8194030949971627366, guid: 370d8633e499a4daab3774c5a592d7b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.7

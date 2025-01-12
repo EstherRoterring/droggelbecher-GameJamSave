@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=0ec88d7d690204cd59b664c33cb9d1e0&amp;type=3#MainMenuStyle" />
     <ui:VisualElement name="Contianer" style="flex-grow: 1; color: rgb(255, 255, 255);">
-        <ui:VisualElement name="Contianer" style="flex-grow: 1; color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Scenes/Puzzle/layer2.png?fileID=2800000&amp;guid=1093dc9e1f99d41fa983b315b10d91cc&amp;type=3#layer2&quot;); -unity-background-scale-mode: scale-and-crop;" />
+        <ui:VisualElement name="Contianer" style="flex-grow: 1; color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Scenes/Puzzle/layer2.png?fileID=2800000&amp;guid=1093dc9e1f99d41fa983b315b10d91cc&amp;type=3#layer2&quot;); -unity-background-scale-mode: scale-and-crop; background-color: rgb(255, 255, 255); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;" />
         <ui:Button text="Next" parse-escape-sequences="true" display-tooltip-when-elided="true" name="next" class="button" style="background-image: none;" />
     </ui:VisualElement>
 </ui:UXML>

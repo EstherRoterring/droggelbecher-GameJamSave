@@ -1137,7 +1137,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1273692537}
-  - component: {fileID: 1273692536}
   m_Layer: 0
   m_Name: backgound
   m_TagString: Untagged
@@ -1145,22 +1144,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1273692536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273692535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de8ac5b56a3e2475f9355de924a51a73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeController: {fileID: 0}
-  skyMinAlpha: 0.5
-  skyMaxAlpha: 0.8
-  skyRenderer: {fileID: 2079368346}
 --- !u!4 &1273692537
 Transform:
   m_ObjectHideFlags: 0
@@ -1327,7 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7876bec1d72534e7e906ac6a92f67a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonClick: {fileID: 0}
+  ButtonClick: {fileID: 8300000, guid: 94b0b1d7a280d4bf8a9e4ef1526193a9, type: 3}
 --- !u!1 &2024060429
 GameObject:
   m_ObjectHideFlags: 0

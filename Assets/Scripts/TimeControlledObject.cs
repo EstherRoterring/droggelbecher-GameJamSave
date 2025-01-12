@@ -17,7 +17,6 @@ public class TimeControlledObject : MonoBehaviour
     private float noiseScale;
 
 
-    public List<Transform> busPassengers = new List<Transform>();
     
     // Start is called before the first frame update
     void Start()
@@ -107,6 +106,4 @@ public class TimeControlledObject : MonoBehaviour
             Gizmos.DrawLine(keyFrame.transform.position, nextKeyFrame.transform.position);
         }
     }
-
-
 }

@@ -125,10 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 6820784458961182970}
   colors:
-  - {r: 0.5896226, g: 0.8410632, b: 1, a: 1}
-  - {r: 0.6666667, g: 0.8410632, b: 1, a: 1}
-  - {r: 0.627451, g: 0.8410632, b: 1, a: 1}
-  - {r: 0.7058824, g: 0.8410632, b: 1, a: 1}
+  - {r: 1, g: 0.05638326, b: 0, a: 1}
 --- !u!1 &5532293152445885736
 GameObject:
   m_ObjectHideFlags: 0

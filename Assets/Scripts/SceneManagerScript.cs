@@ -11,7 +11,6 @@ public class SceneManagerScript : MonoBehaviour
 
     public static bool playerOneInGoal;
     public static bool playerTwoInGoal;
-
     
     // Start is called before the first frame update
     void Start()

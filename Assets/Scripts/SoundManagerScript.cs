@@ -34,8 +34,9 @@ public class SoundManager : MonoBehaviour
     }
 
     // Play a single clip through the sound effects source.
-    public void Play(AudioClip clip)
+    public void Play(AudioClip clip, float pitch = 1)
     {
+        EffectsSource.pitch = pitch;
         EffectsSource.clip = clip;
         EffectsSource.Play();
     }

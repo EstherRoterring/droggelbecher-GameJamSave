@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ScaleWobbleFrame : MonoBehaviour
 {
+    public Transform objectToFollow;
+
     public float global_scale;
     public float anim_time = 1.0f;
     public float min_scale = 1.0f;
@@ -42,7 +44,15 @@ public class ScaleWobbleFrame : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public void PlayOpeningAnimation()
+	private void LateUpdate()
+	{
+		if (objectToFollow != null)
+        {
+            this.transform.position = new Vector3(objectToFollow.position.x, objectToFollow.position.y, 0);
+        }
+	}
+
+	public void PlayOpeningAnimation()
     {
         animation_timer = anim_time;
         opening = true;

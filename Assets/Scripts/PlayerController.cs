@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask canJumpOn;
     public int playerID; // 0 or 1
 
+    public AudioClip deathSound;
+
     public SpriteRenderer renderer;
 
     public TimeControlledObject travellingOnPlatform = null;
@@ -118,6 +120,7 @@ public class PlayerController : MonoBehaviour
 	    {
 		    return; // don't die again.
 	    }
+        SoundManager.Instance.Play(deathSound, 1.3f);
 	    someoneDiedController.someoneDied = true;
 		GetComponent<Rigidbody2D>().gravityScale = 0;
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -127,13 +130,7 @@ public class PlayerController : MonoBehaviour
 	}
 
     private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject == levelBoundary)
-        {
-            Debug.Log("Wir sind gestorben.");
-            Death();
-        }
-
+    { 
 		if (other.gameObject.tag == "Enemy")
 		{
 			Debug.Log("Wir sind durch einen Gegner gestorben.");
@@ -143,6 +140,12 @@ public class PlayerController : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
+		if (other.gameObject == levelBoundary)
+		{
+			Debug.Log("Wir sind gestorben.");
+			Death();
+		}
+
 		if (other.gameObject.tag == "Enemy")
 		{
 			Debug.Log("Wir sind durch einen Gegner gestorben.");

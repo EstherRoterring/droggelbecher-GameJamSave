@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688dd17be5fee8749a932ca0e8f6cba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  someoneDiedController: {fileID: 0}
   player: {fileID: 3817191011364627044}
   playerBody: {fileID: 459367648052889266}
   walkSpeed: 10
@@ -207,6 +208,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   playerID: 0
+  deathSound: {fileID: 8300000, guid: d9d6b25302ad2354e9cd9c57f7e224e3, type: 3}
   renderer: {fileID: 4984516826798545175}
   travellingOnPlatform: {fileID: 0}
   jump: 119

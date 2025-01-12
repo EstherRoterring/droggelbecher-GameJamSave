@@ -7,6 +7,7 @@ public class WobblyWobbly : MonoBehaviour
     
     private float timeOffset;
     private float noiseScale;
+    private float myTime = 0.0f;
     
     // Start is called before the first frame update
     void Start()
@@ -25,11 +26,11 @@ public class WobblyWobbly : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        float currentTime = Time.time;
+        myTime += Time.deltaTime;
         // add local noise, but how?
-        float s = 1f + FourierNoise(2f * currentTime) * 0.2f + 0.2f;
+        float s = 1f + FourierNoise(2f * myTime) * 0.2f + 0.2f;
         this.transform.localScale = new Vector3(s, s, s);
         this.transform.rotation = Quaternion.Euler(0, 0, 0);
-        this.transform.Rotate(Vector3.back, FourierNoise(5f * currentTime + 123f));
+        this.transform.Rotate(Vector3.back, FourierNoise(5f * myTime + 123f));
     }
 }

@@ -3907,7 +3907,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 306734240108528773, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: walkSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 306734240108528773, guid: 67df0100b32ab3d4da6ba12b333f3b5d, type: 3}
       propertyPath: levelBoundary

@@ -16,7 +16,8 @@ public class SceneManagerScript : MonoBehaviour
     void Update()
     {
         // Debug.Log("Player1 :" + playerOneInGoal + "Player2:" + playerTwoInGoal);
-
+        
+        Debug.Log("update" + playerOneInGoal + " - "+ playerTwoInGoal);
         if(playerOneInGoal && playerTwoInGoal){
             LoadNextScene();
         }
@@ -37,18 +38,18 @@ public class SceneManagerScript : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D other){
-        Debug.Log("Something goaled");
         //Player kommen ins Ziel
-        if(other == player01 && !playerOneInGoal)
+        // ultra hack, keine ahnung??
+        if(other.gameObject.ToString() == player01.gameObject.ToString() && !playerOneInGoal)
         {
-            GlobalSceneManager.INSTANCE.transitionFrameP1.PlayClosingAnimation();
+            // GlobalSceneManager.INSTANCE.transitionFrameP1.PlayClosingAnimation();
 			playerOneInGoal = true;
         }
-        if(other == player02 && !playerTwoInGoal)
+        if(other.gameObject.ToString() == player02.gameObject.ToString() && !playerTwoInGoal)
         {
-			GlobalSceneManager.INSTANCE.transitionFrameP2.PlayClosingAnimation();
+			// GlobalSceneManager.INSTANCE.transitionFrameP2.PlayClosingAnimation();
 			playerTwoInGoal = true;
         }
-    
+        Debug.Log("a" + playerOneInGoal + "b" + playerTwoInGoal);
     }
 }

@@ -9,7 +9,7 @@ public class GlobalScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GlobalSceneManager.INSTANCE.ScheduleReloadScene();
         }
     }
 }

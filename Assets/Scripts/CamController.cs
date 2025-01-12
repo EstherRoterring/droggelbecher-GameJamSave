@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
 
 	private void Update()
     {
+        var cameraZ = myCamera.transform.position.z;
         var oldPosition = myCamera.transform.position;
         var diff = player.transform.position - oldPosition;
         if (diff.magnitude <= cameraSpeed * Time.deltaTime)
@@ -19,5 +20,7 @@ public class CameraController : MonoBehaviour
         {
             myCamera.transform.position = oldPosition + cameraSpeed * Time.deltaTime * diff;
         }
+
+        myCamera.transform.position = new Vector3(myCamera.transform.position.x, myCamera.transform.position.y, cameraZ);
     }
 }

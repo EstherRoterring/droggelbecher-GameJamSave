@@ -23,7 +23,7 @@ public class SceneManagerScript : MonoBehaviour
     {
         // Debug.Log("Player1 :" + playerOneInGoal + "Player2:" + playerTwoInGoal);
         
-        Debug.Log("update" + playerOneInGoal + " - "+ playerTwoInGoal);
+        // Debug.Log("update" + playerOneInGoal + " - "+ playerTwoInGoal);
         if(playerOneInGoal && playerTwoInGoal){
             LoadNextScene();
         }

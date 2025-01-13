@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
     public bool shouldFlip = false;
     public bool isWalking = false;
 
+    private bool imDead = false;
+
     private bool jumpKeyDown;
     private bool jumpKeyPressed;
     private bool jumpKeyReleased;
@@ -116,12 +118,19 @@ public class PlayerController : MonoBehaviour
 
     private void Death()
     {
+        if (imDead)
+        {
+            // don't die again
+            return;
+        }
 	    if (someoneDiedController.someoneDied)
 	    {
 		    return; // don't die again.
 	    }
+        Debug.Log("Player " + playerID.ToString() + " died for real :O");
         SoundManager.Instance.Play(deathSound, UnityEngine.Random.Range(0.9f, 1.5f));
 	    someoneDiedController.someoneDied = true;
+        imDead = true;
 		GetComponent<Rigidbody2D>().gravityScale = 0;
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		GetComponentInChildren<SpriteRenderer>().enabled = false;
@@ -142,7 +151,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.gameObject == levelBoundary)
 		{
-			Debug.Log("Wir sind gestorben.");
+			Debug.Log("Wir sind gestorben." + " (Player " + playerID.ToString() + ")");
 			Death();
 		}
 

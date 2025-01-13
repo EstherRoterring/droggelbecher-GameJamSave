@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
 	    {
 		    return; // don't die again.
 	    }
-        SoundManager.Instance.Play(deathSound, UnityEngine.Random.Range(0.8f, 2.5f));
+        SoundManager.Instance.Play(deathSound, UnityEngine.Random.Range(0.9f, 1.5f));
 	    someoneDiedController.someoneDied = true;
 		GetComponent<Rigidbody2D>().gravityScale = 0;
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
